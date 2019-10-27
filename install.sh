@@ -5,6 +5,7 @@ unlink ~/.vimrc
 unlink ~/.zshrc
 unlink ~/.fzf
 unlink ~/.tmux.conf
+unlink ~/.spacemancs
 
 ln -s "$DIR/gitconfig" ~/.gitconfig
 ln -s "$DIR/zshrc" ~/.zshrc
