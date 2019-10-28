@@ -33,3 +33,5 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 alias emacs='emacs -nw'
+
+if [ "$TMUX" = "" ]; then tmux; fi
