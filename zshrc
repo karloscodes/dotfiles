@@ -5,10 +5,12 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
+antigen bundle git-extras
 antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
+antigen bundle kubectl
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -27,6 +29,7 @@ export NVM_DIR="$HOME/.nvm"
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+alias emacs='emacs -nw'
