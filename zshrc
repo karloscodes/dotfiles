@@ -34,4 +34,7 @@ export NVM_DIR="$HOME/.nvm"
 
 alias emacs='emacs -nw'
 
-if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TERM_PROGRAM" != "vscode" ]
+then
+  if [ "$TMUX" = "" ]; then tmux; fi
+fi
