@@ -34,7 +34,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 
-alias emacs='emacs -nw'
+# alias emacs='emacs -nw'
 
 if [ "$TERM_PROGRAM" != "vscode" ]
 then
