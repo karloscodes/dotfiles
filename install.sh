@@ -12,11 +12,14 @@ ln -s "$DIR/zshrc" ~/.zshrc
 ln -s "$DIR/vimrc" ~/.vimrc
 ln -s "$DIR/fzf" ~/.fzf
 ln -s "$DIR/tmux.conf" ~/.tmux.conf
+ln -s "$DIR/spacemacs" ~/.spacemacs
 
 git submodule init
 git submodule update
 
 $DIR/fzf/install
+
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 zsh
 
