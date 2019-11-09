@@ -1,5 +1,4 @@
 {
-  "editor.fontLigatures": false,
   "editor.tabSize": 2,
   "editor.rulers": [
     80
@@ -12,9 +11,7 @@
   "editor.renderIndentGuides": true,
   "editor.renderWhitespace": "selection",
   "editor.autoIndent": true,
-
   "files.insertFinalNewline": true,
-  
   "breadcrumbs.enabled": true,
   // "editor.fontSize": 14,
   // "editor.fontFamily": "Fira Code",
@@ -33,26 +30,25 @@
     "-l"
   ],
   "terminal.integrated.shellArgs.osx": [
-      "-l"
+    "-l"
   ],
   "terminal.integrated.fontFamily": "Droid Sans Mono",
   "workbench.settings.editor": "json",
   "workbench.colorTheme": "Cobalt2",
   "window.titleBarStyle": "custom",
-  
   "eslint.packageManager": "yarn",
-  
   //"ruby.interpreter.commandPath": "/Users/carlos.castellanos/.rvm/bin/rvm-auto-ruby",
   "ruby.useBundler": true, //run non-lint commands with bundle exec
   "ruby.useLanguageServer": true, // use the internal language server (see below)
-  "ruby.lint": {
-    "rubocop": false
+  "rubocop": {
+    "useBundler": true // enable rubocop via bundler
+  },
+  "reek": {
+    "useBundler": true // enable reek via bundler
   },
   "ruby.format": "rubocop", // use rubocop for formatting
   // "ruby.rubocop.executePath": "/Users/carlos.castellanos/.rvm/gems/ruby-2.6.3/wrappers/",
   // "solargraph.commandPath": "/Users/carlos.castellanos/.rvm/gems/ruby-2.6.3/bin/solargraph",
-
-
   // "vim.easymotion": true,
   // "vim.sneak": true,
   // "vim.incsearch": true,
