@@ -14,11 +14,11 @@
   "files.insertFinalNewline": true,
   "breadcrumbs.enabled": true,
   // "editor.fontSize": 14,
-  // "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "Fira Code",
   // "editor.fontFamily": "Hack",
   // "editor.fontFamily": "DejaVu Sans Mono",
-  "editor.fontFamily": "Droid Sans Mono",
-  "editor.fontSize": 15,
+  // "editor.fontFamily": "Menlo",
+  "editor.fontSize": 13.5,
   // "editor.fontFamily": "Hack",
   // "editor.fontFamily": "Consolas"
   // "editor.fontFamily": "Source Code Pro"
@@ -32,7 +32,7 @@
   "terminal.integrated.shellArgs.osx": [
     "-l"
   ],
-  "terminal.integrated.fontFamily": "Droid Sans Mono",
+  "terminal.integrated.fontFamily": "Menlo",
   "workbench.settings.editor": "json",
   "workbench.colorTheme": "Cobalt2",
   "window.titleBarStyle": "custom",
@@ -44,9 +44,10 @@
     "rubocop": {
       "useBundler": true // enable rubocop via bundler
     },
-    "reek": {
-      "useBundler": true // enable reek via bundler
-    }
+    "rubocop": {
+      "useBundler": true, // enable rubocop via bundler
+      "command": "rreek"
+    },
   },
   "ruby.format": "rubocop", // use rubocop for formatting
   // "ruby.rubocop.executePath": "/Users/carlos.castellanos/.rvm/gems/ruby-2.6.3/wrappers/",
