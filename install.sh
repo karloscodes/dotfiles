@@ -35,6 +35,7 @@ code --install-extension patbenatar.advanced-new-file
 code --install-extension rebornix.ruby
 code --install-extension castwide.solargraph
 code --install-extension noku.rails-run-spec-vscode
+code --install-extension misogi.ruby-rubocop
 
 code --install-extension chenxsan.vscode-standardjs
 code --install-extension dbaeumer.vscode-eslint
