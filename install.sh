@@ -55,6 +55,12 @@ else
  \curl -sSL https://get.rvm.io | bash -s stable
 fi
 
+if [ -d "$HOME/.rvm" ]; then
+  echo "pyenv already installed, skipping installation..."
+else
+  git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+fi
+
 
 # Install vscode extensions
 
