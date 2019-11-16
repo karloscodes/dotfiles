@@ -34,8 +34,9 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"'
-export PATH="$PYENV_ROOT/bin:$PATH
+export PYENV_ROOT="$HOME/.pyenv"
+
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 if [ "$TERM_PROGRAM" != "vscode" ]
 then

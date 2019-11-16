@@ -18,7 +18,7 @@
   // "editor.fontFamily": "Hack",
   // "editor.fontFamily": "DejaVu Sans Mono",
   // "editor.fontFamily": "Menlo",
-  "editor.fontSize": 13.5,
+  "editor.fontSize": 15,
   // "editor.fontFamily": "Hack",
   // "editor.fontFamily": "Consolas"
   // "editor.fontFamily": "Source Code Pro"
@@ -26,27 +26,28 @@
   "workbench.iconTheme": "vs-minimal",
   "workbench.activityBar.visible": true,
   "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.shell.linux": "/bin/zsh",
   "terminal.integrated.shellArgs.linux": [
     "-l"
   ],
   "terminal.integrated.shellArgs.osx": [
     "-l"
   ],
-  "terminal.integrated.fontFamily": "Menlo",
+  "terminal.integrated.fontFamily": "Fira Code",
   "workbench.settings.editor": "json",
-  "workbench.colorTheme": "Cobalt2",
+  "workbench.colorTheme": "Horizon",
   "window.titleBarStyle": "custom",
   "eslint.packageManager": "yarn",
-  "ruby.interpreter.commandPath": "/Users/carlos.castellanos/.rvm/bin/rvm-auto-ruby",
+  "ruby.interpreter.commandPath": "/home/ccvera/.rvm/bin/rvm-auto-ruby",
   "ruby.useBundler": true, //run non-lint commands with bundle exec
   "ruby.useLanguageServer": true, // use the internal language server (see below)
   "ruby.lint": false,
   "ruby.format": false,
-  "solargraph.commandPath": "/Users/carlos.castellanos/.rvm/gems/ruby-2.6.3/bin/solargraph",
+  "solargraph.commandPath": "/home/ccvera/.rvm/gems/ruby-2.6.3/bin/solargraph",
   "solargraph.hover": true,
   "solargraph.logLevel": "debug",
   // use rubocop for formatting
-  "ruby.rubocop.executePath": "/Users/carlos.castellanos/.rvm/gems/ruby-2.6.3/wrappers/",
+  "ruby.rubocop.executePath": "/home/ccvera/.rvm/gems/ruby-2.6.3/wrappers/",
   // "vim.easymotion": true,
   // "vim.sneak": true,
   // "vim.incsearch": true,
