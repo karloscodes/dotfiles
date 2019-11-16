@@ -39,7 +39,8 @@ if [[ ! -z $APT ]]; then
     code \
     gnupg2 \
     tmux \
-    curl
+    curl \
+    ttf-mscorefonts-installer
 end
 
 if [ -d "$HOME/.nvm" ]; then
