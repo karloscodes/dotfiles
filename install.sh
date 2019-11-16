@@ -24,9 +24,37 @@ ln -s "$DIR/vscode/settings.json" ~/.config/Code/User/settings.json
 git submodule init
 git submodule update
 
-# Install fzf
+# Install dependencies
 
 $DIR/fzf/install
+
+APT=$(which apt-get)
+
+if [[ ! -z $APT ]]; then
+  sudo apt-get update && sudo apt-get install -y \
+    zsh \
+    git \
+    synapse \
+    gnome-tweak-tool \
+    code \
+    gnupg2 \
+    tmux \
+    curl
+end
+
+if [ -d "$HOME/.nvm" ]; then
+  echo "nvm already installed, skipping installation..."
+else
+ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+fi
+
+if [ -d "$HOME/.rvm" ]; then
+  echo "rvm already installed, skipping installation..."
+else
+ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+ \curl -sSL https://get.rvm.io | bash -s stable
+fi
+
 
 # Install vscode extensions
 
