@@ -1,140 +1,145 @@
 {
-  "editor.tabSize": 2,
-  "editor.rulers": [
-    80
-  ],
-  "editor.fontLigatures": false,
-  "editor.lineHeight": 18,
-  "editor.formatOnPaste": true,
-  "editor.minimap.enabled": false,
-  "editor.dragAndDrop": true,
-  "editor.renderIndentGuides": true,
-  "editor.renderWhitespace": "selection",
-  "editor.autoIndent": true,
-  "files.insertFinalNewline": true,
-  "breadcrumbs.enabled": true,
-  // "editor.fontSize": 14,
-  "editor.fontFamily": "Fira Code",
-  // "editor.fontFamily": "Hack",
-  // "editor.fontFamily": "DejaVu Sans Mono",
-  // "editor.fontFamily": "Menlo",
-  "editor.fontSize": 15,
-  // "editor.fontFamily": "Hack",
-  // "editor.fontFamily": "Consolas"
-  // "editor.fontFamily": "Source Code Pro"
-  "editor.suggestSelection": "first",
-  "workbench.iconTheme": "vs-minimal",
-  "workbench.activityBar.visible": true,
-  "terminal.integrated.shell.osx": "/bin/zsh",
-  "terminal.integrated.shell.linux": "/bin/zsh",
-  "terminal.integrated.shellArgs.linux": [
-    "-l"
-  ],
-  "terminal.integrated.shellArgs.osx": [
-    "-l"
-  ],
-  "terminal.integrated.fontFamily": "Fira Code",
-  "workbench.settings.editor": "json",
-  "workbench.colorTheme": "Horizon",
-  "window.titleBarStyle": "custom",
-  "eslint.packageManager": "yarn",
-  "ruby.interpreter.commandPath": "/home/ccvera/.rvm/bin/rvm-auto-ruby",
-  "ruby.useBundler": true, //run non-lint commands with bundle exec
-  "ruby.useLanguageServer": true, // use the internal language server (see below)
-  "ruby.lint": false,
-  "ruby.format": false,
-  "solargraph.commandPath": "/home/ccvera/.rvm/gems/ruby-2.6.3/bin/solargraph",
-  "solargraph.hover": true,
-  "solargraph.logLevel": "debug",
-  // use rubocop for formatting
-  "ruby.rubocop.executePath": "/home/ccvera/.rvm/gems/ruby-2.6.3/wrappers/",
-  // "vim.easymotion": true,
-  // "vim.sneak": true,
-  // "vim.incsearch": true,
-  // "vim.useCtrlKeys": true,
-  // "vim.hlsearch": true,
-  // "vim.insertModeKeyBindings": [
-  //     {
-  //         "before": [
-  //             "j",
-  //             "j"
-  //         ],
-  //         "after": [
-  //             "<Esc>"
-  //         ]
-  //     }
-  // ],
-  // "vim.normalModeKeyBindingsNonRecursive": [
-  //     {
-  //         "before": [
-  //             "<leader>",
-  //             "d"
-  //         ],
-  //         "after": [
-  //             "d",
-  //             "d"
-  //         ]
-  //     },
-  //     {
-  //         "before": [
-  //             "<C-n>"
-  //         ],
-  //         "commands": [
-  //             ":nohl"
-  //         ]
-  //     },
-  //     {
-  //         "before": [
-  //             "y"
-  //         ],
-  //         "after": [
-  //             "\"",
-  //             "*",
-  //             "y"
-  //         ]
-  //     },
-  //     {
-  //         "before": [
-  //             "p"
-  //         ],
-  //         "after": [
-  //             "\"",
-  //             "*",
-  //             "p"
-  //         ]
-  //     }
-  // ],
-  // "vim.leader": "<space>",
-  // "vim.handleKeys": {
-  //     "<C-a>": false,
-  //     "<C-f>": false
-  // },
-  // "vim.visualModeKeyBindingsNonRecursive": [
-  //     {
-  //         "before": [
-  //             "y"
-  //         ],
-  //         "after": [
-  //             "\"",
-  //             "*",
-  //             "y"
-  //         ]
-  //     },
-  //     {
-  //         "before": [
-  //             "<tab>"
-  //         ],
-  //         "after": [
-  //             ">"
-  //         ]
-  //     },
-  //     {
-  //         "before": [
-  //             "<s-tab>"
-  //         ],
-  //         "after": [
-  //             "<"
-  //         ]
-  //     }
-  // ],
+    "editor.tabSize": 2,
+    "editor.rulers": [
+        80
+    ],
+    "editor.fontLigatures": false,
+    "editor.lineHeight": 18,
+    "editor.formatOnPaste": true,
+    "editor.minimap.enabled": false,
+    "editor.dragAndDrop": true,
+    "editor.renderIndentGuides": true,
+    "editor.renderWhitespace": "selection",
+    "editor.autoIndent": true,
+    "files.insertFinalNewline": true,
+    "breadcrumbs.enabled": true,
+    // "editor.fontSize": 14,
+    "editor.fontFamily": "Fira Code",
+    // "editor.fontFamily": "Hack",
+    // "editor.fontFamily": "DejaVu Sans Mono",
+    // "editor.fontFamily": "Menlo",
+    "editor.fontSize": 15,
+    // "editor.fontFamily": "Hack",
+    // "editor.fontFamily": "Consolas"
+    // "editor.fontFamily": "Source Code Pro"
+    "editor.suggestSelection": "first",
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.activityBar.visible": true,
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "terminal.integrated.shellArgs.linux": [
+        "-l"
+    ],
+    "terminal.integrated.shellArgs.osx": [
+        "-l"
+    ],
+    "terminal.integrated.fontFamily": "Fira Code",
+    "workbench.settings.editor": "json",
+    "workbench.colorTheme": "Horizon",
+    "window.titleBarStyle": "custom",
+    "eslint.packageManager": "yarn",
+    //   "ruby.interpreter.commandPath": "/home/ccvera/.rvm/bin/rvm-auto-ruby",
+    "ruby.useBundler": true, //run non-lint commands with bundle exec
+    "ruby.useLanguageServer": true, // use the internal language server (see below)
+    "ruby.lint": false,
+    "ruby.format": false,
+      "solargraph.definitions": true,
+    "solargraph.commandPath": "/home/ccvera/.rvm/gems/ruby-2.6.3/bin/solargraph",
+    "solargraph.hover": true,
+    "solargraph.logLevel": "debug",
+    // use rubocop for formatting
+    "ruby.rubocop.executePath": "/home/ccvera/.rvm/gems/ruby-2.6.3/wrappers/",
+    "[ruby]": {
+        "editor.defaultFormatter": "misogi.ruby-rubocop"
+    },
+    //   "vim.easymotion": true,
+    //   "vim.sneak": true,
+    //   "vim.incsearch": true,
+    //   "vim.useCtrlKeys": true,
+    //   "vim.hlsearch": true,
+    //   "vim.insertModeKeyBindings": [
+    //       {
+    //           "before": [
+    //               "j",
+    //               "j"
+    //           ],
+    //           "after": [
+    //               "<Esc>"
+    //           ]
+    //       }
+    //   ],
+    //   "vim.normalModeKeyBindingsNonRecursive": [
+    //       {
+    //           "before": [
+    //               "<leader>",
+    //               "d"
+    //           ],
+    //           "after": [
+    //               "d",
+    //               "d"
+    //           ]
+    //       },
+    //       {
+    //           "before": [
+    //               "<C-n>"
+    //           ],
+    //           "commands": [
+    //               ":nohl"
+    //           ]
+    //       },
+    //       {
+    //           "before": [
+    //               "y"
+    //           ],
+    //           "after": [
+    //               "\"",
+    //               "*",
+    //               "y"
+    //           ]
+    //       },
+    //       {
+    //           "before": [
+    //               "p"
+    //           ],
+    //           "after": [
+    //               "\"",
+    //               "*",
+    //               "p"
+    //           ]
+    //       }
+    //   ],
+    //   "vim.leader": ",",
+    //   "vim.handleKeys": {
+    //       "<C-a>": false,
+    //       "<C-f>": false
+    //   },
+    //   "vim.visualModeKeyBindingsNonRecursive": [
+    //       {
+    //           "before": [
+    //               "y"
+    //           ],
+    //           "after": [
+    //               "\"",
+    //               "*",
+    //               "y"
+    //           ]
+    //       },
+    //       {
+    //           "before": [
+    //               "<tab>"
+    //           ],
+    //           "after": [
+    //               ">"
+    //           ]
+    //       },
+    //       {
+    //           "before": [
+    //               "<s-tab>"
+    //           ],
+    //           "after": [
+    //               "<"
+    //           ]
+    //       }
+    // ],
+    "window.zoomLevel": 0
 }
