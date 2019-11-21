@@ -5,6 +5,7 @@
     ],
     "editor.fontLigatures": false,
     "editor.lineHeight": 18,
+    "editor.fontWeight": "400",
     "editor.formatOnPaste": true,
     "editor.minimap.enabled": false,
     "editor.dragAndDrop": true,
@@ -43,7 +44,7 @@
     "ruby.useLanguageServer": true, // use the internal language server (see below)
     "ruby.lint": false,
     "ruby.format": false,
-      "solargraph.definitions": true,
+    "solargraph.definitions": true,
     "solargraph.commandPath": "/home/ccvera/.rvm/gems/ruby-2.6.3/bin/solargraph",
     "solargraph.hover": true,
     "solargraph.logLevel": "debug",
@@ -52,94 +53,212 @@
     "[ruby]": {
         "editor.defaultFormatter": "misogi.ruby-rubocop"
     },
-    //   "vim.easymotion": true,
-    //   "vim.sneak": true,
-    //   "vim.incsearch": true,
-    //   "vim.useCtrlKeys": true,
-    //   "vim.hlsearch": true,
-    //   "vim.insertModeKeyBindings": [
-    //       {
-    //           "before": [
-    //               "j",
-    //               "j"
-    //           ],
-    //           "after": [
-    //               "<Esc>"
-    //           ]
-    //       }
-    //   ],
-    //   "vim.normalModeKeyBindingsNonRecursive": [
-    //       {
-    //           "before": [
-    //               "<leader>",
-    //               "d"
-    //           ],
-    //           "after": [
-    //               "d",
-    //               "d"
-    //           ]
-    //       },
-    //       {
-    //           "before": [
-    //               "<C-n>"
-    //           ],
-    //           "commands": [
-    //               ":nohl"
-    //           ]
-    //       },
-    //       {
-    //           "before": [
-    //               "y"
-    //           ],
-    //           "after": [
-    //               "\"",
-    //               "*",
-    //               "y"
-    //           ]
-    //       },
-    //       {
-    //           "before": [
-    //               "p"
-    //           ],
-    //           "after": [
-    //               "\"",
-    //               "*",
-    //               "p"
-    //           ]
-    //       }
-    //   ],
-    //   "vim.leader": ",",
-    //   "vim.handleKeys": {
-    //       "<C-a>": false,
-    //       "<C-f>": false
-    //   },
-    //   "vim.visualModeKeyBindingsNonRecursive": [
-    //       {
-    //           "before": [
-    //               "y"
-    //           ],
-    //           "after": [
-    //               "\"",
-    //               "*",
-    //               "y"
-    //           ]
-    //       },
-    //       {
-    //           "before": [
-    //               "<tab>"
-    //           ],
-    //           "after": [
-    //               ">"
-    //           ]
-    //       },
-    //       {
-    //           "before": [
-    //               "<s-tab>"
-    //           ],
-    //           "after": [
-    //               "<"
-    //           ]
-    //       }
-    // ],
-    "window.zoomLevel": 0
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "after": [
+                "d",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "y"
+            ],
+            "after": [
+                "\"",
+                "*",
+                "y"
+            ]
+        },
+        {
+            "before": [
+                "p"
+            ],
+            "after": [
+                "\"",
+                "*",
+                "p"
+            ]
+        },
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "5",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "5",
+                "k"
+            ]
+        },
+        // Better moves in splits
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "after": [
+                "<C-w>",
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "after": [
+                "<C-w>",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "<C-k>"
+            ],
+            "after": [
+                "<C-w>",
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "after": [
+                "<C-w>",
+                "l"
+            ]
+        },
+        // END: Better moves in splits
+        // Easier tabs
+        {
+            "before": [
+                "<Leader>",
+                "t",
+                "t"
+            ],
+            "commands": [
+                ":tabnew"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "t",
+                "n"
+            ],
+            "commands": [
+                ":tabnext"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "t",
+                "p"
+            ],
+            "commands": [
+                ":tabprev"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "t",
+                "o"
+            ],
+            "commands": [
+                ":tabo"
+            ]
+        }
+        // END: Easier tabs
+        // Mapping editor actions
+        {
+            "before": [
+                "<Leader>",
+                "p"
+            ],
+            "commands": [
+                "workbench.action.showCommands",
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.gotoSymbol",
+            ]
+        }
+        // END: Mapping editor actions
+    ],
+    "vim.leader": ",",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "y"
+            ],
+            "after": [
+                "\"",
+                "*",
+                "y"
+            ]
+        },
+        {
+            "before": [
+                "<tab>"
+            ],
+            "after": [
+                ">"
+            ]
+        },
+        {
+            "before": [
+                "<s-tab>"
+            ],
+            "after": [
+                "<"
+            ]
+        }
+    ]
 }
