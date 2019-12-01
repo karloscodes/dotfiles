@@ -8,10 +8,11 @@ unlink ~/.spacemancs
 unlink ~/.config/Code/User/keybindings.json
 unlink ~/.config/Code/User/settings.json
 
+mkdir -p "~/.config/nvim"
 
 ln -s "$DIR/gitconfig" ~/.gitconfig
 ln -s "$DIR/zshrc" ~/.zshrc
-ln -s "$DIR/vimrc" ~/.vimrc
+ln -s "$DIR/vimrc" ~/.config/nvim/init.vim
 ln -s "$DIR/tmux.conf" ~/.tmux.conf
 ln -s "$DIR/spacemacs" ~/.spacemacs
 ln -s "$DIR/vscode/keybindings.json" ~/.config/Code/User/keybindings.json
@@ -84,6 +85,10 @@ code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension jolaleye.horizon-theme-vscode
 code --install-extension wesbos.theme-cobalt2
 code --install-extension coenraads.bracket-pair-colorizer
+
+code --install-extension bwildeman.tabulous
+code --install-extension vscodevim.vim
+
 
 # Install spacemacs
 # git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d

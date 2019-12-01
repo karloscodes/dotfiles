@@ -1,4 +1,11 @@
 // Place your key bindings in this file to override the defaults
 [
-
+  {
+    "key": "ctrl+b 1",
+    "command": "tabulous.showTerminal1"
+  },
+  {
+    "key": "ctrl+b 2",
+    "command": "tabulous.showTerminal2"
+  }
 ]

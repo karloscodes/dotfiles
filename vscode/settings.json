@@ -53,6 +53,19 @@
     "[ruby]": {
         "editor.defaultFormatter": "misogi.ruby-rubocop"
     },
+    "tabulous.defaultTerminals": [
+        {
+            "name": "1: tmux",
+            "directory": "./",
+            "command": "tmux",
+            "executeCommand": true
+        },
+        {
+            "name": "2: zsh",
+            "directory": "./",
+            // "command": "zsh"
+        },
+    ],
     "vim.easymotion": true,
     "vim.sneak": true,
     "vim.incsearch": true,
@@ -169,7 +182,7 @@
         {
             "before": [
                 "<Leader>",
-                "t",
+                "w",
                 "t"
             ],
             "commands": [
@@ -179,7 +192,7 @@
         {
             "before": [
                 "<Leader>",
-                "t",
+                "w",
                 "n"
             ],
             "commands": [
@@ -188,7 +201,7 @@
         },
         {
             "before": [
-                "<Leader>",
+                "w",
                 "t",
                 "p"
             ],
@@ -199,7 +212,7 @@
         {
             "before": [
                 "<Leader>",
-                "t",
+                "w",
                 "o"
             ],
             "commands": [
@@ -260,5 +273,6 @@
                 "<"
             ]
         }
-    ]
+    ],
+    "window.zoomLevel": 0
 }
