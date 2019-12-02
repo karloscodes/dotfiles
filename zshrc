@@ -12,7 +12,9 @@ antigen bundle lein
 antigen bundle command-not-found
 antigen bundle kubectl
 
-# Syntax highlighting bundle.
+# Load bundles from external repos.
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
