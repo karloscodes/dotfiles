@@ -12,7 +12,7 @@ mkdir -p "~/.config/nvim"
 
 ln -s "$DIR/gitconfig" ~/.gitconfig
 ln -s "$DIR/zshrc" ~/.zshrc
-ln -s "$DIR/vimrc" ~/.config/nvim/init.vim
+ln -s "$DIR/init.vim" ~/.config/nvim/init.vim
 ln -s "$DIR/tmux.conf" ~/.tmux.conf
 ln -s "$DIR/spacemacs" ~/.spacemacs
 ln -s "$DIR/vscode/keybindings.json" ~/.config/Code/User/keybindings.json
