@@ -124,6 +124,13 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS " autocomplete css
 map <leader>w :w!<CR>
 map <C-s> :w!<CR>
 
+" Buffers
+map <leader>bd :bd<CR>
+map <leader>bD :bd!<CR>
+map <leader>bn :bn<CR>
+map <leader>bp :bp<CR>
+
+
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -170,29 +177,9 @@ let g:lasttab = 1
 nmap <leader>tl :exe "tabn ".g:lasttab<cr>
 au TabLeave * let g:lasttab = tabpagenr()
 
-" Terminal integrated with F4
-let g:term_buf = 0
-function! Term_toggle()
-  1wincmd w
-  if g:term_buf == bufnr("")
-    setlocal bufhidden=hide
-    close
-  else
-    topleft vnew
-    try
-      exec "buffer ".g:term_buf
-    catch
-      call termopen("zsh", {"detach": 1 })
-      let g:term_buf = bufnr("")
-    endtry
-    startinsert!
-  endif
-endfunction
-nnoremap <C-x> :call Term_toggle()<cr>
-
-" Exit from terminal
-:tnoremap <F5> <C-\><C-n>
-
+" Maps ctrl-b + " to open a new horizontal split with a terminal
+nnoremap <C-b>c :new +terminal<CR>
+tnoremap <C-b>c <C-\><C-n>:new +terminal<CR>
 
 nnoremap <leader>w :bw<CR>
 nnoremap <leader>p :GFiles<CR>
