@@ -26,8 +26,8 @@ antigen apply
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="~/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 
 # FZF
