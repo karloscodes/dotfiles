@@ -1,6 +1,10 @@
 // Place your key bindings in this file to override the defaults
 [
   {
+    "key": "ctrl+0",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
     "key": "ctrl+1",
     "command": "tabulous.showTerminal1"
   },
