@@ -1,9 +1,6 @@
 set nocompatible
 filetype off
 
-" Specify a directory for Plugs
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'Plug'
 call plug#begin('~/.vim/plugged')
 " stdpath('config') . '/init.vim'
 
@@ -37,6 +34,13 @@ Plug 'vim-airline/vim-airline' " cool status line
 Plug 'sheerun/vim-polyglot' " support for different file types
 Plug 'terryma/vim-multiple-cursors' " multiple cursors
 Plug 'ervandew/supertab' " autocomplete with tab
+Plug 'ryanoasis/vim-devicons'
+Plug 'xianzhon/vim-code-runner'
+Plug 'scrooloose/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+
+" Ruby
 Plug 'tpope/vim-rails'
 Plug 'thoughtbot/vim-rspec'
 Plug 'vim-ruby/vim-ruby' " ruby support
@@ -45,19 +49,6 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'tpope/vim-dispatch'
 Plug 'janko/vim-test'
 
-
-" Plug 'kien/ctrlp.vim' " file autocomplete
-" Plug 'fontzoom.vim' " zoom font
-" Plug 'honza/vim-snippets' " snippets
-" Plug 'gregsexton/MatchTag' " shows matching html tag
-" Plug 'Yggdroot/indentLine' " Plug to display nesting level, works only in gui
-" Plug 'vim-syntastic/syntastic' " syntax checking
-" Plug 'prettier/vim-prettier' " prettier
-" Plug 'scrooloose/nerdtree'
-" Plug 'Valloric/YouCompleteMe' " autocomplete engine
-" Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
-" Plug 'spf13/vim-autoclose' " autoclose brackets
-" Plug 'dkprice/vim-easygrep' " search and replace
 call plug#end()
 
 syntax on
@@ -107,7 +98,7 @@ set mouse=v
 set nobackup
 set nofoldenable " disable folding
 set nohidden
-set nospell " spell checking off
+" set nospell " spell checking off
 set noswapfile
 set nowrap " word wrapp off
 set number
@@ -129,28 +120,47 @@ autocmd BufWritePre * %s/\s\+$//e " remove space on save
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS " autocomplete css
 " autocmd BufWritePre * :silent !mkdir -p %:p:h " create directory before writing
 
+" Save file with leader w and C-s
+map <leader>w :w!<CR>
+map <C-s> :w!<CR>
+
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Close the current buffer
-map <leader>bd :Bclose<cr>
+" Useful mappings for managing tabs
+map <leader>tt :tabnew<cr>
+
+" Change tabs with , + 1...9
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+
+" Change tabs with ALT + 1...9
+nmap <M-1> <Plug>AirlineSelectTab1
+nmap <M-2> <Plug>AirlineSelectTab2
+nmap <M-3> <Plug>AirlineSelectTab3
+nmap <M-4> <Plug>AirlineSelectTab4
+nmap <M-5> <Plug>AirlineSelectTab5
+nmap <M-6> <Plug>AirlineSelectTab6
+nmap <M-7> <Plug>AirlineSelectTab7
+nmap <M-8> <Plug>AirlineSelectTab8
+nmap <M-9> <Plug>AirlineSelectTab9
 
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>
 
 " Open new split panes to right and bottom, which feels more natural
-set splitbelow
 set splitright
-
-" Useful mappings for managing tabs
-map <leader>to :tabnew<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
+set splitbelow
 
 " Splits to a new window
 map <leader>n :new<cr>
@@ -159,6 +169,30 @@ map <leader>n :new<cr>
 let g:lasttab = 1
 nmap <leader>tl :exe "tabn ".g:lasttab<cr>
 au TabLeave * let g:lasttab = tabpagenr()
+
+" Terminal integrated with F4
+let g:term_buf = 0
+function! Term_toggle()
+  1wincmd w
+  if g:term_buf == bufnr("")
+    setlocal bufhidden=hide
+    close
+  else
+    topleft vnew
+    try
+      exec "buffer ".g:term_buf
+    catch
+      call termopen("zsh", {"detach": 1 })
+      let g:term_buf = bufnr("")
+    endtry
+    startinsert!
+  endif
+endfunction
+nnoremap <C-x> :call Term_toggle()<cr>
+
+" Exit from terminal
+:tnoremap <F5> <C-\><C-n>
+
 
 nnoremap <leader>w :bw<CR>
 nnoremap <leader>p :GFiles<CR>
@@ -171,6 +205,7 @@ nnoremap zj o<Esc>
 nnoremap zk O<Esc>
 nnoremap <leader>k yiw:Ag <C-r>"<CR>
 vnoremap <leader>k y:Ag <C-r>"<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Rspec
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,10 +213,10 @@ vnoremap <leader>k y:Ag <C-r>"<CR>
 let g:rspec_command = "!bundle exec rspec {spec}"
 
 " vim-rspec mappings
-nnoremap <leader>rt :call RunCurrentSpecFile()<cr>
-nnoremap <leader>rs :call RunNearestSpec()<cr>
-nnoremap <leader>rl :call RunLastSpec()<cr>
-nnoremap <leader>ra :call RunAllSpecs()<cr>
+" nnoremap <leader>rt :call RunCurrentSpecFile()<cr>
+" nnoremap <leader>rs :call RunNearestSpec()<cr>
+" nnoremap <leader>rl :call RunLastSpec()<cr>
+" nnoremap <leader>ra :call RunAllSpecs()<cr>
 
 " vim-test mappings
 nnoremap <silent> <Leader>t :TestFile<CR>
