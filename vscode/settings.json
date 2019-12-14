@@ -49,7 +49,7 @@
     "solargraph.hover": true,
     "solargraph.logLevel": "debug",
     // use rubocop for formatting
-    "ruby.rubocop.executePath": "/home/ccvera/.rvm/gems/ruby-2.6.3/wrappers/",
+    // "ruby.rubocop.executePath": "/home/ccvera/.rvm/gems/ruby-2.6.3/wrappers/",
     "[ruby]": {
         "editor.defaultFormatter": "misogi.ruby-rubocop"
     },
