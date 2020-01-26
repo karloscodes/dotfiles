@@ -23,12 +23,6 @@ antigen theme robbyrussell
 # Tell Antigen that you're done.
 antigen apply
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="~/.pyenv/bin:$PATH"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
