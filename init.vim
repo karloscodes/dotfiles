@@ -13,8 +13,8 @@ Plug 'SirVer/ultisnips'
 " search code
 Plug 'mileszs/ack.vim'
 " color scheme
-" Plug 'tomasr/molokai'
-Plug 'ntk148v/vim-horizon'
+Plug 'tomasr/molokai'
+" Plug 'ntk148v/vim-horizon'
 
 Plug 'scrooloose/nerdcommenter' " toggle comment code
 Plug 'tpope/vim-endwise' " add end in ruby automatically
@@ -116,6 +116,7 @@ set wildmode=list:longest,full
 set splitbelow
 set splitright
 
+
 autocmd BufWritePre * %s/\s\+$//e " remove space on save
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS " autocomplete css
 " autocmd BufWritePre * :silent !mkdir -p %:p:h " create directory before writing
@@ -165,9 +166,6 @@ nmap <M-9> <Plug>AirlineSelectTab9
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>
 
-" Open new split panes to right and bottom, which feels more natural
-set splitright
-set splitbelow
 
 " Splits to a new window
 map <leader>n :new<cr>
@@ -177,9 +175,9 @@ let g:lasttab = 1
 nmap <leader>tl :exe "tabn ".g:lasttab<cr>
 au TabLeave * let g:lasttab = tabpagenr()
 
-" Maps ctrl-b + " to open a new horizontal split with a terminal
-nnoremap <C-b>c :new +terminal<CR>
-tnoremap <C-b>c <C-\><C-n>:new +terminal<CR>
+" Maps ctrl-t + " to open a new horizontal split with a terminal
+nnoremap <C-t>c :new +terminal<CR>
+tnoremap <C-t>c <C-\><C-n>:new +terminal<CR>
 
 nnoremap <leader>w :bw<CR>
 nnoremap <leader>p :GFiles<CR>
@@ -234,7 +232,7 @@ nmap <leader>gp :Git push<CR>a
 " if you don't set this option, this color might not correct
 set termguicolors
 
-colorscheme horizon
+colorscheme molokai
 
 " lightline
 let g:lightline = {}
