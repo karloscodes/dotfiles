@@ -20,16 +20,23 @@ ln -s "$DIR/vscode/settings.json" ~/.config/Code/User/settings.json
 
 
 
-git submodule init
-git submodule update
+#git submodule init
+#git submodule update
 
 # Install dependencies
 
-$DIR/fzf/install
+#$DIR/fzf/install
+
+if [ -d "$HOME/.fzf" ]; then
+  echo "fzf already installed, skipping installation..."
+else
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+fi
 
 APT=$(which apt-get)
 
-if [[ ! -z $APT ]]; then
+if [ ! -z $APT ]; then
   sudo apt-get update && sudo apt-get install -y \
     zsh \
     git \
@@ -40,21 +47,13 @@ if [[ ! -z $APT ]]; then
     tmux \
     curl \
     ttf-mscorefonts-installer
-    fzf
-
-
-  sudo apt-add-repository -y ppa:rael-gc/rvm
-  sudo apt-get install rvm
-else
-  if [ -d "$HOME/.rvm" ]; then
-    echo "rvm already installed, skipping installation..."
-  else
-    gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-    \curl -sSL https://get.rvm.io | bash -s stable
-  fi
 fi
-
-
+if [ -d "$HOME/.rvm" ]; then
+  echo "rvm already installed, skipping installation..."
+else
+  gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  \curl -sSL https://get.rvm.io | bash -s stable
+fi
 
 if [ -d "$HOME/.nvm" ]; then
   echo "nvm already installed, skipping installation..."
