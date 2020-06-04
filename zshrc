@@ -41,3 +41,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # then
 #  if [ "$TMUX" = "" ]; then tmux; fi
 # fi
+
+alias tmux="tmux attach || tmux new"
