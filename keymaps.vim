@@ -44,7 +44,8 @@ nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>p :Files<CR>
 nnoremap <leader>c :Commands<CR>
 nnoremap <leader>s :Snippets<CR>
-nnoremap <C-f> :Rg 
+nnoremap <C-f> :Rg
+nnoremap <leader>* :Rg 
 
 noremap <leader>/ :call NERDComment(0,"toggle")<CR>
 nmap <C-w> :NERDTreeToggle<CR>
