@@ -94,5 +94,7 @@ code --install-extension vscodevim.vim
 
 zsh
 
+echo "Warning: Please install nerdfonts from: https://github.com/ryanoasis/nerd-fonts"
 echo "All dotfiles have been installed :)"
+
 
