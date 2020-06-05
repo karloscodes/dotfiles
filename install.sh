@@ -46,7 +46,8 @@ if [ ! -z $APT ]; then
     gnupg2 \
     tmux \
     curl \
-    ttf-mscorefonts-installer
+    ttf-mscorefonts-installer \ 
+    neovim
 fi
 if [ -d "$HOME/.rvm" ]; then
   echo "rvm already installed, skipping installation..."
