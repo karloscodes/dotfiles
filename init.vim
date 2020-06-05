@@ -13,8 +13,9 @@ Plug 'SirVer/ultisnips'
 " search code
 Plug 'mileszs/ack.vim'
 " color scheme
-Plug 'tomasr/molokai'
-" Plug 'ntk148v/vim-horizon'
+" Plug 'tomasr/molokai'
+" Plug 'morhetz/gruvbox'
+Plug 'ntk148v/vim-horizon'
 
 Plug 'scrooloose/nerdcommenter' " toggle comment code
 Plug 'tpope/vim-endwise' " add end in ruby automatically
@@ -49,6 +50,8 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'tpope/vim-dispatch'
 Plug 'janko/vim-test'
 
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 syntax on
@@ -60,7 +63,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:molokai_original=1
+" let g:molokai_original=1
 let g:syntastic_ruby_checkers = ['rubocop']
 
 let g:vimrubocop_keymap = 0
@@ -84,7 +87,7 @@ set showmatch
 set autoindent
 set backspace=2 " backspace working in insert mode
 set completeopt=longest,menuone,preview
-set encoding=utf-8
+set encoding=UTF-8
 set endofline
 set expandtab
 set foldmethod=marker
@@ -228,18 +231,15 @@ nmap <leader>gp :Git push<CR>a
 
 
 
-" color molokai
-" if you don't set this option, this color might not correct
 set termguicolors
-
-colorscheme molokai
+set cursorline
+colorscheme horizon
 
 " lightline
+" let g:lightline = {}
+" let g:lightline.colorscheme = 'gruvbox_material'
 let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox_material'
-
-" or this line
-let g:lightline = {'colorscheme' : 'gruvbox_material'}
+let g:lightline.colorscheme = 'horizon'
 
 highlight Normal ctermbg=234
 highlight NonText ctermbg=234 guibg=#272822 guifg=#272822
@@ -247,7 +247,7 @@ highlight ColorColumn ctermbg=234 guibg=#252620
 highlight LineNr ctermbg=234 guibg=#252620
 
 " Airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#formatter = 'default'
