@@ -1,18 +1,21 @@
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 unlink ~/.gitconfig
-unlink ~/.vimrc
+# unlink ~/.vimrc
 unlink ~/.zshrc
 unlink ~/.tmux.conf
 unlink ~/.spacemancs
 unlink ~/.config/Code/User/keybindings.json
 unlink ~/.config/Code/User/settings.json
+unlink ~/.config/nvim/init.vim
+unlink ~/.config/nvim/keymaps.vim
 
 mkdir -p "~/.config/nvim"
 
 ln -s "$DIR/gitconfig" ~/.gitconfig
 ln -s "$DIR/zshrc" ~/.zshrc
 ln -s "$DIR/init.vim" ~/.config/nvim/init.vim
+ln -s "$DIR/keymaps.vim" ~/.config/nvim/keymaps.vim
 ln -s "$DIR/tmux.conf" ~/.tmux.conf
 ln -s "$DIR/spacemacs" ~/.spacemacs
 ln -s "$DIR/vscode/keybindings.json" ~/.config/Code/User/keybindings.json
