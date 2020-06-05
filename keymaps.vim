@@ -40,11 +40,15 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 nnoremap <leader>w :bw<CR>
-nnoremap <leader>p :GFiles<CR>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>p :Files<CR>
 nnoremap <leader>c :Commands<CR>
 nnoremap <leader>s :Snippets<CR>
+nnoremap <C-f> :Rg 
+
 noremap <leader>/ :call NERDComment(0,"toggle")<CR>
 nmap <C-w> :NERDTreeToggle<CR>
+
 nnoremap zj o<Esc> "?
 nnoremap zk O<Esc> "?
 

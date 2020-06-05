@@ -50,6 +50,8 @@ if [ ! -z $APT ]; then
     tmux \
     curl \
     ttf-mscorefonts-installer \ 
+    ripgrep \
+    ctgs \
     neovim
 fi
 if [ -d "$HOME/.rvm" ]; then
