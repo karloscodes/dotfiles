@@ -40,6 +40,7 @@ Plug 'xianzhon/vim-code-runner'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
+Plug 'caenrique/nvim-toggle-terminal'
 
 " Ruby
 Plug 'tpope/vim-rails'
@@ -50,13 +51,17 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'tpope/vim-dispatch'
 Plug 'janko/vim-test'
 
+Plug 'liuchengxu/vim-which-key'
+
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
 syntax on
 
-let mapleader = ","
+let mapleader = " "
+" let maplocalleader = " "
+
 let g:netrw_banner = 0
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline_powerline_fonts = 1
@@ -112,6 +117,7 @@ set t_Co=256
 set tabstop=2
 set wildmenu
 set wildmode=list:longest,full
+set timeoutlen=1000
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -123,6 +129,10 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS " autocomplete css
 " autocmd BufWritePre * :silent !mkdir -p %:p:h " create directory before writing
 
 source $HOME/.config/nvim/keymaps.vim
+
+
+let g:lasttab = 1
+au TabLeave * let g:lasttab = tabpagenr()
 
 " Theme related
 set termguicolors
