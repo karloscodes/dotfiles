@@ -26,36 +26,6 @@ nnoremap <silent> <Leader>rgt :TestVisit<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Global
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Save file with leader w and C-s
-map <leader>w :w!<CR>
-map <C-s> :w!<CR>
-
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-nnoremap <leader>w :bw<CR>
-nnoremap <C-p> :GFiles<CR>
-nnoremap <leader>p :Files<CR>
-nnoremap <leader>c :Commands<CR>
-nnoremap <leader>s :Snippets<CR>
-nnoremap <C-f> :Rg
-nnoremap <leader>* :Rg 
-
-noremap <leader>/ :call NERDComment(0,"toggle")<CR>
-nmap <C-w> :NERDTreeToggle<CR>
-
-nnoremap zj o<Esc> "?
-nnoremap zk O<Esc> "?
-
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffers => b
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -138,5 +108,33 @@ nmap <leader>gp :Git push<CR>a
 " Whichkey
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+" nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+" nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Global
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Save file with leader w and C-s
+map <leader>w :w!<CR>
+map <C-s> :w!<CR>
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+nnoremap <leader>w :bw<CR>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>p :Files<CR>
+nnoremap <leader>c :Commands<CR>
+nnoremap <leader>s :Snippets<CR>
+nnoremap <C-f> :Rg
+nnoremap <leader>* :Rg 
+
+noremap <leader>/ :call NERDComment(0,"toggle")<CR>
+nmap <leader>nt :NERDTreeToggle<CR>
+
+nnoremap zj o<Esc> "?
+nnoremap zk O<Esc> "?

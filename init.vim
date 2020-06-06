@@ -51,8 +51,7 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'tpope/vim-dispatch'
 Plug 'janko/vim-test'
 
-Plug 'liuchengxu/vim-which-key'
-
+" Plug 'liuchengxu/vim-which-key'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -97,10 +96,11 @@ set foldmethod=marker
 set hlsearch
 set ignorecase
 set incsearch
+set smartcase
 set laststatus=2 " always display status line
 set listchars=tab:\|\ 
 set list
-set mouse=v
+set mouse=a
 set nobackup
 set nofoldenable " disable folding
 set nohidden
@@ -108,6 +108,8 @@ set nohidden
 set noswapfile
 set nowrap " word wrapp off
 set number
+set numberwidth=1
+set relativenumber
 set shiftwidth=2
 set showcmd " show command which is being typed
 set smartcase
@@ -117,7 +119,11 @@ set t_Co=256
 set tabstop=2
 set wildmenu
 set wildmode=list:longest,full
-set timeoutlen=1000
+" set timeoutlen=1000
+set clipboard=unnamed
+set ruler
+set termguicolors
+set cursorline
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -135,9 +141,12 @@ let g:lasttab = 1
 au TabLeave * let g:lasttab = tabpagenr()
 
 " Theme related
-set termguicolors
-set cursorline
-colorscheme horizon
+	colorscheme horizon
+
+
+" colorscheme gruvbox
+" let g:gruvbox_contrast_dark = "hard"
+
 
 " lightline
 " let g:lightline = {}
@@ -149,6 +158,7 @@ highlight Normal ctermbg=234
 highlight NonText ctermbg=234 guibg=#272822 guifg=#272822
 highlight ColorColumn ctermbg=234 guibg=#252620
 highlight LineNr ctermbg=234 guibg=#252620
+highlight Pmenu ctermbg=234 guibg=234
 
 " Airline
 let g:airline_powerline_fonts = 0
