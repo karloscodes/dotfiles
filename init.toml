@@ -43,21 +43,18 @@ name = 'shell'
 default_position = 'bottom'
 default_height = 30
 
-[[layers]]
-name = "fzf"
-
 #[[layers]]
-#name = "unite"
+#name = "fzf"
+
+[[layers]]
+name = "denite"
 
 [[layers]]
 name = "lang#ruby"
 
 [[layers]]
 name = "git"
+git_plugin = "fugitive"
 
 [[layers]]
 name = "colorscheme"
-
-
-
-
