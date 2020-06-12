@@ -43,11 +43,11 @@ name = 'shell'
 default_position = 'bottom'
 default_height = 30
 
-#[[layers]]
-#name = "fzf"
-
 [[layers]]
-name = "denite"
+name = "fzf"
+
+#[[layers]]
+#name = "denite"
 
 [[layers]]
 name = "lang#ruby"
@@ -58,3 +58,10 @@ git_plugin = "fugitive"
 
 [[layers]]
 name = "colorscheme"
+
+[[custom_plugins]]
+ name = 'junegunn/fzf.vim'
+ merged = 0
+ hook_add = '''
+ nnoremap <silent> <C-p> :GFiles<cr>
+ '''
