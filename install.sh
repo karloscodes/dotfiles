@@ -81,7 +81,7 @@ code --install-extension patbenatar.advanced-new-file
 code --install-extension rebornix.ruby
 code --install-extension castwide.solargraph
 code --install-extension noku.rails-run-spec-vscode
-code --install-extension misogi.ruby-rubocop
+# code --install-extension misogi.ruby-rubocop
 
 code --install-extension chenxsan.vscode-standardjs
 code --install-extension dbaeumer.vscode-eslint
@@ -89,10 +89,14 @@ code --install-extension streetsidesoftware.code-spell-checker
 
 code --install-extension jolaleye.horizon-theme-vscode
 code --install-extension wesbos.theme-cobalt2
+code --install-extension alexanderte.dainty-vscode
 code --install-extension coenraads.bracket-pair-colorizer
 
 code --install-extension bwildeman.tabulous
-code --install-extension vscodevim.vim
+code --install-extension tusaeff.vscode-iterm2-theme-sync
+code --install-extension vspacecode.vspacecode
+
+# code --install-extension vscodevim.vim
 
 
 # Install spacemacs
