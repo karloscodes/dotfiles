@@ -22,7 +22,6 @@ ln -s "$DIR/vscode/keybindings.json" ~/.config/Code/User/keybindings.json
 ln -s "$DIR/vscode/settings.json" ~/.config/Code/User/settings.json
 
 
-
 #git submodule init
 #git submodule update
 
@@ -57,7 +56,8 @@ fi
 if [ -d "$HOME/.rvm" ]; then
   echo "rvm already installed, skipping installation..."
 else
-  gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  #gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
   \curl -sSL https://get.rvm.io | bash -s stable
 fi
 
@@ -107,4 +107,6 @@ zsh
 echo "Warning: Please install nerdfonts from: https://github.com/ryanoasis/nerd-fonts"
 echo "All dotfiles have been installed :)"
 
+
+# https://github.com/zsh-users/zsh-completions/issues/433
 
