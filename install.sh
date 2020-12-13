@@ -1,34 +1,26 @@
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 unlink ~/.gitconfig
-# unlink ~/.vimrc
+ln -s "$DIR/gitconfig" ~/.gitconfig
+
+unlink ~/.gitignore
+ln -s "$DIR/gitignore" ~/.gitignore
+
+
 unlink ~/.zshrc
+ln -s "$DIR/zshrc" ~/.zshrc
+
+
 unlink ~/.tmux.conf
-unlink ~/.spacemancs
+ln -s "$DIR/tmux.conf" ~/.tmux.conf
+
 unlink ~/.config/Code/User/keybindings.json
 unlink ~/.config/Code/User/settings.json
-unlink ~/.config/nvim/init.vim
-unlink ~/.config/nvim/keymaps.vim
-
-mkdir -p "~/.config/nvim"
-
-ln -s "$DIR/gitconfig" ~/.gitconfig
-ln -s "$DIR/zshrc" ~/.zshrc
-ln -s "$DIR/init.vim" ~/.config/nvim/init.vim
-ln -s "$DIR/keymaps.vim" ~/.config/nvim/keymaps.vim
-ln -s "$DIR/tmux.conf" ~/.tmux.conf
-ln -s "$DIR/spacemacs" ~/.spacemacs
 ln -s "$DIR/vscode/keybindings.json" ~/.config/Code/User/keybindings.json
 ln -s "$DIR/vscode/settings.json" ~/.config/Code/User/settings.json
 
 
-#git submodule init
-#git submodule update
-
 # Install dependencies
-
-#$DIR/fzf/install
-
 if [ -d "$HOME/.fzf" ]; then
   echo "fzf already installed, skipping installation..."
 else
@@ -53,10 +45,36 @@ if [ ! -z $APT ]; then
     ctgs \
     neovim
 fi
+
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  brew install git-lfs
+  brew install htop
+  brew install telnet
+  brew install git
+  brew install coreutils
+  brew install findutils
+  brew install wget --with-iri
+  brew install grep
+  brew install p7zip
+  brew install imagemagick --with-webp
+  brew install tree
+  brew install tmux
+  brew install postgresql
+  brew install yarn
+  brew tap homebrew/cask-fonts
+  brew cask install font-jetbrains-mono
+  brew install mysql@5.7
+  brew cleanup
+fi
+
+
+
 if [ -d "$HOME/.rvm" ]; then
   echo "rvm already installed, skipping installation..."
 else
-  #gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
   gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
   \curl -sSL https://get.rvm.io | bash -s stable
 fi
@@ -95,9 +113,6 @@ code --install-extension coenraads.bracket-pair-colorizer
 code --install-extension bwildeman.tabulous
 code --install-extension tusaeff.vscode-iterm2-theme-sync
 code --install-extension vspacecode.vspacecode
-
-# code --install-extension vscodevim.vim
-
 
 # Install spacemacs
 # git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d

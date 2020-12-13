@@ -36,7 +36,7 @@
   "workbench.settings.editor": "json",
   "window.titleBarStyle": "custom",
   "eslint.packageManager": "yarn",
-  "ruby.interpreter.commandPath": "/Users/carlos.castellanos/.rvm/bin/rvm-auto-ruby",
+  "ruby.interpreter.commandPath": "/Users/ccvera/.rvm/bin/rvm-auto-ruby",
   "ruby.useBundler": true, //run non-lint commands with bundle exec
   "ruby.useLanguageServer": true, // use the internal language server (see below)
   "ruby.lint": {
@@ -46,7 +46,7 @@
     "reek": false
   },
   "ruby.format": "rubocop",
-  "solargraph.commandPath": "/Users/carlos.castellanos/.rvm/gems/ruby-2.6.3/bin/solargraph",
+  "solargraph.commandPath": "/Users/ccvera/.rvm/gems/default/bin/solargraph",
   "solargraph.hover": true,
   "solargraph.logLevel": "debug",
   "search.enableSearchEditorPreview": true,
