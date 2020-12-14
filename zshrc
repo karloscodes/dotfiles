@@ -11,6 +11,8 @@ antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
 antigen bundle kubectl
+antigen bundle docker
+antigen bundle docker-compose
 
 # Load bundles from external repos.
 antigen bundle zsh-users/zsh-completions
@@ -37,9 +39,9 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# if [ "$TERM_PROGRAM" != "vscode" ]
-# then
-#  if [ "$TMUX" = "" ]; then tmux; fi
-# fi
+if [ "$TERM_PROGRAM" != "vscode" ]
+then
+ if [ "$TMUX" = "" ]; then tmux; fi
+fi
 
 alias tmux="tmux attach || tmux new"
