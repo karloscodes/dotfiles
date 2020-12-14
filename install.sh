@@ -56,16 +56,16 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install git
   brew install coreutils
   brew install findutils
-  brew install wget --with-iri
+  brew install wget
   brew install grep
   brew install p7zip
-  brew install imagemagick --with-webp
+  brew install imagemagick
   brew install tree
   brew install tmux
   brew install postgresql
   brew install yarn
   brew tap homebrew/cask-fonts
-  brew cask install font-jetbrains-mono
+  brew install --cask font-jetbrains-mono
   brew install mysql@5.7
   brew cleanup
 fi
@@ -117,7 +117,7 @@ code --install-extension vspacecode.vspacecode
 # Install spacemacs
 # git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
-zsh
+# zsh
 
 echo "Warning: Please install nerdfonts from: https://github.com/ryanoasis/nerd-fonts"
 echo "All dotfiles have been installed :)"
