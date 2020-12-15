@@ -39,9 +39,9 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH="$PATH:$HOME/.rvm/bin"
 
-if [ "$TERM_PROGRAM" != "vscode" ]
-then
- if [ "$TMUX" = "" ]; then tmux; fi
-fi
+# if [ "$TERM_PROGRAM" != "vscode" ]
+# then
+#  if [ "$TMUX" = "" ]; then tmux; fi
+# fi
 
 alias tmux="tmux attach || tmux new"
