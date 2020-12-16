@@ -10,7 +10,7 @@ antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
-antigen bundle kubectl
+# antigen bundle kubectl
 antigen bundle docker
 antigen bundle docker-compose
 
