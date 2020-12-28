@@ -14,7 +14,7 @@
   "breadcrumbs.enabled": true,
   // "editor.fontSize": 14,
   // "editor.fontFamily": "Fira Code",
-  "editor.fontFamily": "JetBrains Mono", 
+  "editor.fontFamily": "JetBrains Mono",
   // "editor.fontFamily": "Hack",
   // "editor.fontFamily": "DejaVu Sans Mono",
   // "editor.fontFamily": "Menlo",
@@ -32,7 +32,8 @@
   "terminal.integrated.shellArgs.osx": [
     "-l"
   ],
-  "terminal.integrated.fontFamily": "Menlo",
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "terminal.integrated.fontSize": 13,
   "workbench.settings.editor": "json",
   "window.titleBarStyle": "custom",
   "eslint.packageManager": "yarn",
@@ -46,7 +47,7 @@
     "reek": false
   },
   "ruby.format": "rubocop",
-  "solargraph.commandPath": "/Users/ccvera/.rvm/gems/default/bin/solargraph",
+  "solargraph.commandPath": "/Users/ccvera/.rvm/gems/ruby-2.7.1/bin/solargraph",
   "solargraph.hover": true,
   "solargraph.logLevel": "debug",
   "search.enableSearchEditorPreview": true,
@@ -61,7 +62,7 @@
   "editor.scrollBeyondLastLine": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[json]": {
@@ -95,9 +96,12 @@
   "vim.useSystemClipboard": true,
   "workbench.colorTheme": "Dainty – Dracula",
   "workbench.colorCustomizations": {
-   "editor.selectionBackground": "#135564",
-   "editor.selectionHighlightBackground": "#135564",
-   "editorSuggestWidget.selectedBackground": "#135564",
-   "list.focusBackground": "#135564"
-  } 
+    "editor.selectionBackground": "#135564",
+    "editor.selectionHighlightBackground": "#135564",
+    "editorSuggestWidget.selectedBackground": "#135564",
+    "list.focusBackground": "#135564"
+  },
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  }
 }
