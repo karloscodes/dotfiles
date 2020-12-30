@@ -64,6 +64,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install tmux
   brew install postgresql
   brew install yarn
+  brew install vips
   brew tap homebrew/cask-fonts
   brew install --cask font-jetbrains-mono
   brew install mysql@5.7
