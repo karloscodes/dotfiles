@@ -68,6 +68,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew tap homebrew/cask-fonts
   brew install --cask font-jetbrains-mono
   brew install mysql@5.7
+  brew install pyenv
   brew cleanup
 fi
 
@@ -86,11 +87,6 @@ else
  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 fi
 
-if [ -d "$HOME/.pyenv" ]; then
-  echo "pyenv already installed, skipping installation..."
-else
-  git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-fi
 
 
 # Install vscode extensions
