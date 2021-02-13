@@ -43,6 +43,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
+source $HOME/.cargo/env
 
 if [ "$TERM_PROGRAM" != "vscode" ]
 then

@@ -49,7 +49,7 @@ fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
+  brew install --cask visual-studio-code
   brew install git-lfs
   brew install htop
   brew install telnet
@@ -69,6 +69,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install --cask font-jetbrains-mono
   brew install mysql@5.7
   brew install pyenv
+  xcode-select --install
   brew cleanup
 fi
 
