@@ -10,6 +10,8 @@ ln -s "$DIR/gitignore" ~/.gitignore
 unlink ~/.zshrc
 ln -s "$DIR/zshrc" ~/.zshrc
 
+unlink ~/.asdfrc
+ln -s "$DIR/zshrc" ~/.asdfrc
 
 unlink ~/.tmux.conf
 ln -s "$DIR/tmux.conf" ~/.tmux.conf
@@ -65,6 +67,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install postgresql
   brew install yarn
   brew install vips
+  brew install asdf
   brew tap homebrew/cask-fonts
   brew install --cask font-jetbrains-mono
   brew install mysql@5.7
@@ -73,22 +76,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew cleanup
 fi
 
+brew install openssl readline
+asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+RUBY_CFLAGS="-w" asdf install ruby 3.1.0
 
-
-if [ -d "$HOME/.rvm" ]; then
-  echo "rvm already installed, skipping installation..."
-else
-  gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-  \curl -sSL https://get.rvm.io | bash -s stable
-fi
-
-if [ -d "$HOME/.nvm" ]; then
-  echo "nvm already installed, skipping installation..."
-else
- curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-fi
-
-
+asdf install nodejs 14.16.0
+asdf global nodejs 14.16.0
 
 # Install vscode extensions
 

@@ -25,23 +25,15 @@ antigen theme robbyrussell
 # Tell Antigen that you're done.
 antigen apply
 
-
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+
+eval "$(pyenv init -)"
 
 source $HOME/.cargo/env
 
@@ -52,4 +44,5 @@ fi
 
 alias tmux="tmux attach || tmux new"
 
-eval "$(pyenv init -)"
+# asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
