@@ -75,6 +75,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install --cask devtoys
   brew install --cask runjs
   brew install monosnap
+  brew install rocket
   xcode-select --install
   brew cleanup
 fi
