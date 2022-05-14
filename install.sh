@@ -74,6 +74,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install pyenv
   brew install --cask devtoys
   brew install --cask runjs
+  brew install monosnap
   xcode-select --install
   brew cleanup
 fi
