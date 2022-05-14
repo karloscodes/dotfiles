@@ -72,6 +72,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install --cask font-jetbrains-mono
   brew install mysql@5.7
   brew install pyenv
+  brew install --cask devtoys
   xcode-select --install
   brew cleanup
 fi
