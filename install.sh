@@ -10,25 +10,13 @@ ln -s "$DIR/gitignore" ~/.gitignore
 unlink ~/.zshrc
 ln -s "$DIR/zshrc" ~/.zshrc
 
-unlink ~/.asdfrc
-ln -s "$DIR/zshrc" ~/.asdfrc
-
-unlink ~/.tmux.conf
-ln -s "$DIR/tmux.conf" ~/.tmux.conf
+# unlink ~/.tmux.conf
+# ln -s "$DIR/tmux.conf" ~/.tmux.conf
 
 unlink ~/.config/Code/User/keybindings.json
 unlink ~/.config/Code/User/settings.json
 ln -s "$DIR/vscode/keybindings.json" ~/.config/Code/User/keybindings.json
 ln -s "$DIR/vscode/settings.json" ~/.config/Code/User/settings.json
-
-
-# Install dependencies
-if [ -d "$HOME/.fzf" ]; then
-  echo "fzf already installed, skipping installation..."
-else
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
-fi
 
 APT=$(which apt-get)
 
@@ -51,11 +39,17 @@ fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  
   brew install --cask visual-studio-code
+  brew install --cask raycast
+  brew install docker
+  brew install git
   brew install git-lfs
   brew install htop
   brew install telnet
-  brew install git
   brew install coreutils
   brew install findutils
   brew install wget
@@ -67,25 +61,32 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install postgresql
   brew install yarn
   brew install vips
-  brew install asdf
   brew tap homebrew/cask-fonts
   brew install --cask font-jetbrains-mono
   brew install mysql@5.7
-  brew install pyenv
-  brew install --cask devtoys
-  brew install --cask runjs
-  brew install monosnap
-  brew install rocket
+  brew install openssl 
+  brew install readline
+  brew install gpg 
+  brew install gawk
+
+  brew install fzf
   xcode-select --install
   brew cleanup
+
+  # To install useful key bindings and fuzzy completion:
+  $(brew --prefix)/opt/fzf/install
+
+  # asdf
+  echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
+  
+  asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+  RUBY_CFLAGS="-w" asdf install ruby 3.1.0
+
+  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  asdf install nodejs 14.16.0
+  asdf global nodejs 14.16.0
 fi
 
-brew install openssl readline
-asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-RUBY_CFLAGS="-w" asdf install ruby 3.1.0
-
-asdf install nodejs 14.16.0
-asdf global nodejs 14.16.0
 
 # Install vscode extensions
 
@@ -94,7 +95,6 @@ code --install-extension patbenatar.advanced-new-file
 code --install-extension rebornix.ruby
 code --install-extension castwide.solargraph
 code --install-extension noku.rails-run-spec-vscode
-# code --install-extension misogi.ruby-rubocop
 
 code --install-extension chenxsan.vscode-standardjs
 code --install-extension dbaeumer.vscode-eslint
@@ -104,16 +104,10 @@ code --install-extension jolaleye.horizon-theme-vscode
 code --install-extension wesbos.theme-cobalt2
 code --install-extension alexanderte.dainty-vscode
 
-code --install-extension bwildeman.tabulous
+# code --install-extension bwildeman.tabulous
 code --install-extension tusaeff.vscode-iterm2-theme-sync
-code --install-extension vspacecode.vspacecode
+# code --install-extension vspacecode.vspacecode
 
-# Install spacemacs
-# git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-
-# zsh
-
-echo "Warning: Please install nerdfonts from: https://github.com/ryanoasis/nerd-fonts"
 echo "All dotfiles have been installed :)"
 
 
