@@ -4,16 +4,12 @@
     80
   ],
   "editor.fontLigatures": false,
-  // "editor.lineHeight": 18,
   "editor.formatOnPaste": true,
   "editor.minimap.enabled": false,
   "editor.dragAndDrop": true,
-  "editor.renderIndentGuides": true,
   "editor.renderWhitespace": "all",
   "files.insertFinalNewline": true,
   "breadcrumbs.enabled": true,
-  // "editor.fontSize": 14,
-  // "editor.fontFamily": "Fira Code",
   "editor.fontFamily": "JetBrains Mono",
   // "editor.fontFamily": "Hack",
   // "editor.fontFamily": "DejaVu Sans Mono",
@@ -25,18 +21,10 @@
   "editor.suggestSelection": "first",
   "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
   "workbench.activityBar.visible": true,
-  "terminal.integrated.shell.osx": "/bin/zsh",
-  "terminal.integrated.shellArgs.linux": [
-    "-l"
-  ],
-  "terminal.integrated.shellArgs.osx": [
-    "-l"
-  ],
   "terminal.integrated.fontFamily": "JetBrains Mono",
   "terminal.integrated.fontSize": 13,
   "workbench.settings.editor": "json",
   "window.titleBarStyle": "custom",
-  "eslint.packageManager": "yarn",
   "ruby.interpreter.commandPath": "/Users/ccvera/.rvm/bin/rvm-auto-ruby",
   "ruby.useBundler": true, //run non-lint commands with bundle exec
   "ruby.useLanguageServer": true, // use the internal language server (see below)
@@ -50,15 +38,6 @@
   "solargraph.commandPath": "/Users/ccvera/.rvm/gems/ruby-2.7.1/bin/solargraph",
   "solargraph.hover": true,
   "solargraph.logLevel": "debug",
-  "search.enableSearchEditorPreview": true,
-  // "tabulous.defaultTerminals": [
-  //   {
-  //     "name": "tmux",
-  //     "directory": "./",
-  //     "command": "tmux",
-  //     "executeCommand": true
-  //   }
-  // ],
   "editor.scrollBeyondLastLine": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "[javascript]": {
@@ -71,29 +50,6 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "vim.easymotion": true,
-  "vim.hlsearch": true,
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<space>"
-      ],
-      "commands": [
-        "vspacecode.space"
-      ]
-    }
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<space>"
-      ],
-      "commands": [
-        "vspacecode.space"
-      ]
-    }
-  ],
-  "vim.useSystemClipboard": true,
   "workbench.colorTheme": "Dainty – Dracula",
   "workbench.colorCustomizations": {
     "editor.selectionBackground": "#135564",

@@ -68,6 +68,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install readline
   brew install gpg 
   brew install gawk
+  brew install asdf
 
   brew install fzf
   xcode-select --install
@@ -78,13 +79,14 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # asdf
   echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
+  source ~/.zshrc
   
   asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
   RUBY_CFLAGS="-w" asdf install ruby 3.1.0
 
   asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-  asdf install nodejs 14.16.0
-  asdf global nodejs 14.16.0
+  asdf install nodejs 16.16.0
+  asdf global nodejs 16.16.0
 
 
   source ~/.zshrc
