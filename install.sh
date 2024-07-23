@@ -1,3 +1,9 @@
+#!/bin/bash
+
+# Get the current logged-in user
+USER=$(whoami)
+
+# Set up the dotfiles directory
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 unlink ~/.gitconfig
@@ -6,10 +12,8 @@ ln -s "$DIR/gitconfig" ~/.gitconfig
 unlink ~/.gitignore
 ln -s "$DIR/gitignore" ~/.gitignore
 
-
 unlink ~/.zshrc
 ln -s "$DIR/zshrc" ~/.zshrc
-
 
 # Create Alacritty config directory if it doesn't exist
 mkdir -p ~/.config/alacritty
@@ -18,7 +22,7 @@ mkdir -p ~/.config/alacritty
 unlink ~/.config/alacritty/alacritty.yml
 ln -s "$DIR/alacritty.yml" ~/.config/alacritty/alacritty.yml
 
-
+# Uncomment the following lines if you want to manage tmux configuration as well
 # unlink ~/.tmux.conf
 # ln -s "$DIR/tmux.conf" ~/.tmux.conf
 
@@ -39,15 +43,25 @@ if [ ! -z $APT ]; then
     gnupg2 \
     tmux \
     curl \
-    ttf-mscorefonts-installer \ 
+    ttf-mscorefonts-installer \
     ripgrep \
     ctgs \
     neovim
 fi
 
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  # Install Homebrew if not installed
+  if ! command -v brew &> /dev/null; then
+    sudo chown -R $USER /usr/local/var/homebrew
+    sudo chown -R $USER /usr/local/Homebrew
+    sudo chown -R $USER /usr/local/bin
+    
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
+
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   
   brew install --cask visual-studio-code
   brew install --cask raycast
@@ -84,29 +98,19 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   $(brew --prefix)/opt/fzf/install
 fi
 
-
 # Install vscode extensions
-
 code --install-extension patbenatar.advanced-new-file
-
 code --install-extension rebornix.ruby
 code --install-extension castwide.solargraph
 code --install-extension noku.rails-run-spec-vscode
-
 code --install-extension chenxsan.vscode-standardjs
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension streetsidesoftware.code-spell-checker
-
 code --install-extension jolaleye.horizon-theme-vscode
 code --install-extension wesbos.theme-cobalt2
 code --install-extension alexanderte.dainty-vscode
-
 # code --install-extension bwildeman.tabulous
 code --install-extension tusaeff.vscode-iterm2-theme-sync
 # code --install-extension vspacecode.vspacecode
 
 echo "All dotfiles have been installed :)"
-
-
-# https://github.com/zsh-users/zsh-completions/issues/433
-
