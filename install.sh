@@ -48,9 +48,6 @@ fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   
   brew install --cask visual-studio-code
   brew install --cask raycast
