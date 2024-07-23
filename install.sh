@@ -52,15 +52,15 @@ fi
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Install Homebrew if not installed
   if ! command -v brew &> /dev/null; then
-    sudo chown -R $USER /usr/local/var/homebrew
-    sudo chown -R $USER /usr/local/Homebrew
-    sudo chown -R $USER /usr/local/bin
-    
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
 
+  sudo chown -R $USER /usr/local/var/homebrew
+  sudo chown -R $USER /usr/local/Homebrew
+  sudo chown -R $USER /usr/local/bin
+  
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   
   brew install --cask visual-studio-code
