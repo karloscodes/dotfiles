@@ -19,17 +19,12 @@ ln -s "$DIR/zshrc" ~/.zshrc
 mkdir -p ~/.config/alacritty
 
 # Unlink and link the Alacritty configuration file
-unlink ~/.config/alacritty/alacritty.yml
-ln -s "$DIR/alacritty.yml" ~/.config/alacritty/alacritty.yml
+unlink ~/.config/alacritty/alacritty.toml
+ln -s "$DIR/alacritty.toml" ~/.config/alacritty/alacritty.toml
 
 # Uncomment the following lines if you want to manage tmux configuration as well
 # unlink ~/.tmux.conf
 # ln -s "$DIR/tmux.conf" ~/.tmux.conf
-
-unlink ~/.config/Code/User/keybindings.json
-unlink ~/.config/Code/User/settings.json
-ln -s "$DIR/vscode/keybindings.json" ~/.config/Code/User/keybindings.json
-ln -s "$DIR/vscode/settings.json" ~/.config/Code/User/settings.json
 
 APT=$(which apt-get)
 
@@ -75,6 +70,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   
+  # Install Oh My Zsh plugins
+  mkdir -p ~/.oh-my-zsh/custom/plugins
+  cd ~/.oh-my-zsh/custom/plugins
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git
+
   brew install --cask visual-studio-code
   brew install --cask raycast
   brew install docker
@@ -122,22 +123,56 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew cleanup
 
   # To install useful key bindings and fuzzy completion:
-  source <(fzf --zsh)
-fi
+  # source <(fzf --zsh)
+  $(brew --prefix)/opt/fzf/install --all
 
-# Install vscode extensions
-code --install-extension patbenatar.advanced-new-file
-code --install-extension rebornix.ruby
-code --install-extension castwide.solargraph
-code --install-extension noku.rails-run-spec-vscode
-code --install-extension chenxsan.vscode-standardjs
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension streetsidesoftware.code-spell-checker
-code --install-extension jolaleye.horizon-theme-vscode
-code --install-extension wesbos.theme-cobalt2
-code --install-extension alexanderte.dainty-vscode
-# code --install-extension bwildeman.tabulous
-code --install-extension tusaeff.vscode-iterm2-theme-sync
-# code --install-extension vspacecode.vspacecode
+  # macOS configurations
+  # Finder: show all filename extensions
+  defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+  # Finder: show hidden files by default
+  defaults write com.apple.finder AppleShowAllFiles -bool false
+
+  # Finder: show status bar
+  defaults write com.apple.finder ShowStatusBar -bool false
+
+  # Finder: show path bar
+  defaults write com.apple.finder ShowPathbar -bool true
+
+  # Finder: allow text selection in Quick Look
+  defaults write com.apple.finder QLEnableTextSelection -bool true
+
+  # Finder: use list view in all Finder windows by default
+  defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+  # Change escape to caps lock
+  hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000029,"HIDKeyboardModifierMappingDst":0x700000039}]}'
+
+
+  # Disable press-and-hold for keys in favor of key repeat
+  defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+  # Set a fast key repeat rate
+  defaults write NSGlobalDomain KeyRepeat -int 1
+  defaults write NSGlobalDomain InitialKeyRepeat -int 25
+
+  # Show battery percentage
+  defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+  # Expand save panel by default
+  defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+  defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+  # Expand print panel by default
+  defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+  defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+  # Save screenshots to the Downloads folder
+  defaults write com.apple.screencapture location -string "${HOME}/Downloads/Screenshots"
+  
+  # Restart Finder and Dock to apply changes
+  killall Finder
+  killall Dock
+fi
 
 echo "All dotfiles have been installed :)"

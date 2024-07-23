@@ -1,3 +1,47 @@
 [user]
 	name = Carlos Castellanos
 	email = me@karloscodes.com
+	
+[alias]
+    # Status
+    st = status
+    # Add
+    a = add
+    # Commit
+    cm = commit
+    # Amend Commit
+    amend = commit --amend
+    # Log
+    lg = log --oneline --graph --decorate --all
+    # Checkout
+    co = checkout
+    # Branch
+    br = branch
+    # Merge
+    mg = merge
+    # Pull
+    pl = pull
+    # Push
+    ps = push
+    # Fetch
+    ft = fetch
+    # Diff
+    df = diff
+    # Reset
+    rs = reset
+    # Rebase
+    rb = rebase
+    # Cherry-pick
+    cp = cherry-pick
+    # Show
+    sh = show
+    # Undo last commit but keep changes
+    undo = reset --soft HEAD~1
+    # Hard reset to remote branch
+    hard-reset = !git reset --hard @{u}
+    # Clean untracked files
+    clean-untracked = !git clean -fd
+    # Unstaged diff
+    ds = diff --staged
+    # List aliases
+    aliases = config --get-regexp alias
