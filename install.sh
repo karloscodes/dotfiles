@@ -103,11 +103,26 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install --cask alacritty
 
   brew install fzf
+
+  brew install bat        # Enhanced `cat` command with syntax highlighting
+  brew install exa        # Modern replacement for `ls`
+  brew install fd         # Simple, fast, user-friendly alternative to `find`
+  brew install tldr       # Simplified and community-driven man pages
+  brew install the_silver_searcher  # A code-searching tool similar to `ack`, but faster
+  brew install httpie     # User-friendly HTTP client
+  brew install jq         # Command-line JSON processor
+  brew install ncdu       # Disk usage analyzer with an ncurses interface
+  brew install glances    # System monitoring tool
+  brew install btop       # Resource monitor that shows usage and stats
+  brew install mas        # Mac App Store command-line interface
+  brew install watch      # Executes a program periodically, showing output fullscreen
+  brew install neovim     # Modern Vim-based text editor
+
   xcode-select --install
   brew cleanup
 
   # To install useful key bindings and fuzzy completion:
-  $("$BREW_PREFIX"/opt/fzf/install)
+  source <(fzf --zsh)
 fi
 
 # Install vscode extensions
