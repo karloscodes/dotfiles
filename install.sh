@@ -10,6 +10,15 @@ ln -s "$DIR/gitignore" ~/.gitignore
 unlink ~/.zshrc
 ln -s "$DIR/zshrc" ~/.zshrc
 
+
+# Create Alacritty config directory if it doesn't exist
+mkdir -p ~/.config/alacritty
+
+# Unlink and link the Alacritty configuration file
+unlink ~/.config/alacritty/alacritty.yml
+ln -s "$DIR/alacritty.yml" ~/.config/alacritty/alacritty.yml
+
+
 # unlink ~/.tmux.conf
 # ln -s "$DIR/tmux.conf" ~/.tmux.conf
 
@@ -62,13 +71,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install yarn
   brew install vips
   brew tap homebrew/cask-fonts
-  brew install --cask font-jetbrains-mono
+  brew install --cask font-jetbrains-mono-nerd-font
   brew install mysql@5.7
   brew install openssl 
   brew install readline
   brew install gpg 
   brew install gawk
-  brew install asdf
+  brew install --cask alacritty
 
   brew install fzf
   xcode-select --install
@@ -76,22 +85,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # To install useful key bindings and fuzzy completion:
   $(brew --prefix)/opt/fzf/install
-
-  # asdf
-  echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
-  source ~/.zshrc
-  
-  asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-  RUBY_CFLAGS="-w" asdf install ruby 3.1.0
-
-  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-  asdf install nodejs 16.16.0
-  asdf global nodejs 16.16.0
-
-
-  source ~/.zshrc
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 
 
