@@ -90,9 +90,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install p7zip
   brew install imagemagick
   brew install tree
-  brew install tmux
   brew install postgresql
-  brew install yarn
   brew install vips
   brew tap homebrew/cask-fonts
   brew install --cask font-jetbrains-mono-nerd-font
@@ -102,7 +100,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install gpg 
   brew install gawk
   brew install --cask alacritty
-
+  brew install firefox
+  brew install 1password
+  brew install notion
   brew install fzf
 
   brew install bat        # Enhanced `cat` command with syntax highlighting
