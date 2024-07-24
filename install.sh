@@ -68,7 +68,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # Install and Activate mise
   curl https://mise.run | sh
-  echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
 
   sudo chown -R $USER /usr/local/share/zsh /usr/local/share/zsh/site-functions
 
