@@ -118,6 +118,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install zsh-autosuggestions
   brew install zsh-completions
   brew install zellij
+  brew install go
   sudo chown -R $(whoami) /usr/local/share/fish/vendor_completions.d
 
   brew install bat        # Enhanced `cat` command with syntax highlighting
