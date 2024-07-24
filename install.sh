@@ -66,6 +66,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   sudo chown -R $USER $BREW_PREFIX/Homebrew
   sudo chown -R $USER $BREW_PREFIX/bin
 
+  # Install and Activate mise
+  curl https://mise.run | sh
+  echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
+
   sudo chown -R $USER /usr/local/share/zsh /usr/local/share/zsh/site-functions
 
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
