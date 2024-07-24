@@ -102,3 +102,10 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(~/.local/bin/mise activate zsh)"
+
+start_zellij() {
+  if [ "$TERM_PROGRAM" != "vscode" ] && [ -z "$ZELLIJ" ]; then
+    exec zellij
+  fi
+}
+start_zellij

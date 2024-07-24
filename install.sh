@@ -22,6 +22,12 @@ mkdir -p ~/.config/alacritty
 unlink ~/.config/alacritty/alacritty.toml
 ln -s "$DIR/alacritty.toml" ~/.config/alacritty/alacritty.toml
 
+
+# Unlink and link the Alacritty configuration file
+unlink ~/.config/zellij/config.kdl
+ln -s "$DIR/zellij.kdl" ~/.config/zellij/config.kdl
+
+
 # Uncomment the following lines if you want to manage tmux configuration as well
 # unlink ~/.tmux.conf
 # ln -s "$DIR/tmux.conf" ~/.tmux.conf
@@ -107,6 +113,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install 1password
   brew install notion
   brew install fzf
+  brew install zellij
 
   brew install bat        # Enhanced `cat` command with syntax highlighting
   brew install exa        # Modern replacement for `ls`
