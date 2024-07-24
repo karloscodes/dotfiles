@@ -3,7 +3,7 @@
 [window]
 opacity = 0.9
 decorations = "full"
-startup_mode = "Maximized"
+startup_mode = "Windowed"
 dynamic_title = true
 decorations_theme_variant = "Dark"
 blur = true

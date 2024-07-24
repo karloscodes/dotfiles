@@ -79,11 +79,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   
-  # Install Oh My Zsh plugins
-  mkdir -p ~/.oh-my-zsh/custom/plugins
-  cd ~/.oh-my-zsh/custom/plugins
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git
+  # # Install Oh My Zsh plugins
+  # mkdir -p ~/.oh-my-zsh/custom/plugins
+  # cd ~/.oh-my-zsh/custom/plugins
+  # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+  # git clone https://github.com/zsh-users/zsh-autosuggestions.git
+
 
   brew install --cask visual-studio-code
   brew install --cask raycast
@@ -113,7 +114,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install 1password
   brew install notion
   brew install fzf
+  brew install zsh-syntax-highlighting
+  brew install zsh-autosuggestions
+  brew install zsh-completions
   brew install zellij
+  sudo chown -R $(whoami) /usr/local/share/fish/vendor_completions.d
 
   brew install bat        # Enhanced `cat` command with syntax highlighting
   brew install exa        # Modern replacement for `ls`
@@ -130,7 +135,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install neovim     # Modern Vim-based text editor
 
   xcode-select --install
-  brew cleanup
 
   # To install useful key bindings and fuzzy completion:
   # source <(fzf --zsh)
@@ -155,10 +159,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Finder: use list view in all Finder windows by default
   defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-  # Change escape to caps lock
-  hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000029,"HIDKeyboardModifierMappingDst":0x700000039}]}'
-
-
   # Disable press-and-hold for keys in favor of key repeat
   defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
@@ -178,11 +178,14 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
   # Save screenshots to the Downloads folder
-  defaults write com.apple.screencapture location -string "${HOME}/Downloads/Screenshots"
+  defaults write com.apple.screencapture location -string "${HOME}/Documents/Screenshots"
   
   # Restart Finder and Dock to apply changes
   killall Finder
   killall Dock
+
+  brew cleanup
+  brew doctor
 fi
 
 echo "All dotfiles have been installed :)"

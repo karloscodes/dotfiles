@@ -103,6 +103,12 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(~/.local/bin/mise activate zsh)"
 
+if [[ $(uname -m) == 'arm64' ]]; then
+  export BREW_PREFIX="/opt/homebrew"
+else
+  export BREW_PREFIX="/usr/local"
+fi
+
 start_zellij() {
   if [ "$TERM_PROGRAM" != "vscode" ] && [ -z "$ZELLIJ" ]; then
     exec zellij
