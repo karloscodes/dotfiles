@@ -164,7 +164,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
   # Set a fast key repeat rate
-  defaults write NSGlobalDomain KeyRepeat -int 1
+  defaults write NSGlobalDomain KeyRepeat -int 2
   defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
   # Show battery percentage
