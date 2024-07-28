@@ -165,7 +165,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # Set a fast key repeat rate
   defaults write NSGlobalDomain KeyRepeat -int 1
-  defaults write NSGlobalDomain InitialKeyRepeat -int 25
+  defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
   # Show battery percentage
   defaults write com.apple.menuextra.battery ShowPercent -string "YES"
