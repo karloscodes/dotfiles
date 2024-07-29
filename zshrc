@@ -115,3 +115,6 @@ start_zellij() {
   fi
 }
 start_zellij
+
+# Add go $HOME binaries to the path
+export PATH=$PATH:$HOME/go/bin
