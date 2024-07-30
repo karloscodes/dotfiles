@@ -2,11 +2,12 @@
 
 [window]
 opacity = 0.9
-decorations = "full"
+decorations = "Transparent"
 startup_mode = "Windowed"
 dynamic_title = true
 decorations_theme_variant = "Dark"
 blur = true
+padding = { x = 0, y = 25 }
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font" }
