@@ -1,12 +1,12 @@
 # Alacritty Configuration
 
 [window]
-opacity = 0.9
+opacity = 1
 decorations = "Transparent"
 startup_mode = "Windowed"
 dynamic_title = true
 decorations_theme_variant = "Dark"
-blur = true
+blur = false
 padding = { x = 0, y = 25 }
 
 [font]
@@ -21,29 +21,31 @@ program = "/bin/zsh"
 args = ["--login"]
 
 [colors]
+
 [colors.primary]
 background = "0x1E1E2E"
-foreground = "0xD9E0EE"
+foreground = "0xCDD6F4"
 
 [colors.normal]
-black = "0x1E1E2E"
-red = "0xF28FAD"
-green = "0xABE9B3"
-yellow = "0xFAE3B0"
-blue = "0x96CDFB"
+black = "0x45475A"
+red = "0xF38BA8"
+green = "0xA6E3A1"
+yellow = "0xF9E2AF"
+blue = "0x89B4FA"
 magenta = "0xF5C2E7"
-cyan = "0x89DCEB"
-white = "0xD9E0EE"
+cyan = "0x94E2D5"
+white = "0xBAC2DE"
 
 [colors.bright]
-black = "0x6E6C7E"
-red = "0xF28FAD"
-green = "0xABE9B3"
-yellow = "0xFAE3B0"
-blue = "0x96CDFB"
+black = "0x585B70"
+red = "0xF38BA8"
+green = "0xA6E3A1"
+yellow = "0xF9E2AF"
+blue = "0x89B4FA"
 magenta = "0xF5C2E7"
-cyan = "0x89DCEB"
-white = "0xD9E0EE"
+cyan = "0x94E2D5"
+white = "0xA6ADC8"
+
 
 [[keyboard.bindings]]
 key = "V"
