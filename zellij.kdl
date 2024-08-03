@@ -191,12 +191,6 @@ plugins {
     strider location="zellij:strider"
     compact-bar location="zellij:compact-bar"
     session-manager location="zellij:session-manager"
-    welcome-screen location="zellij:session-manager" {
-        welcome_screen true
-    }
-    filepicker location="zellij:strider" {
-        cwd "/"
-    }
 }
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
@@ -213,6 +207,12 @@ plugins {
 //    - false (Default)
 //
 // simplified_ui true
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -280,12 +280,13 @@ plugins {
 // Default: default
 //
 
-theme "catppuccin-mocha"
+//theme "catppuccin-mocha"
+theme "tokyo-night-storm"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+// default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
