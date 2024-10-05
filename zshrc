@@ -118,3 +118,6 @@ start_zellij
 
 # Add go $HOME binaries to the path
 export PATH=$PATH:$HOME/go/bin
+
+# bun completions
+[ -s "/Users/karloscodes/.bun/_bun" ] && source "/Users/karloscodes/.bun/_bun"
