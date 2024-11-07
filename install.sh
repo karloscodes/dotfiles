@@ -16,16 +16,19 @@ unlink ~/.zshrc
 ln -s "$DIR/zshrc" ~/.zshrc
 
 # Create Alacritty config directory if it doesn't exist
-mkdir -p ~/.config/alacritty
+# mkdir -p ~/.config/alacritty
 
 # Unlink and link the Alacritty configuration file
-unlink ~/.config/alacritty/alacritty.toml
-ln -s "$DIR/alacritty.toml" ~/.config/alacritty/alacritty.toml
+# unlink ~/.config/alacritty/alacritty.toml
+# ln -s "$DIR/alacritty.toml" ~/.config/alacritty/alacritty.toml
 
 
 # Unlink and link the Alacritty configuration file
-unlink ~/.config/zellij/config.kdl
-ln -s "$DIR/zellij.kdl" ~/.config/zellij/config.kdl
+# unlink ~/.config/zellij/config.kdl
+# ln -s "$DIR/zellij.kdl" ~/.config/zellij/config.kdl
+
+unlink ~/.wezterm.lua
+ln -s "$DIR/.wezterm.lua" ~/.wezterm.lua
 
 
 # Uncomment the following lines if you want to manage tmux configuration as well
@@ -75,16 +78,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Install and Activate mise
   curl https://mise.run | sh
 
-  sudo chown -R $USER /usr/local/share/zsh /usr/local/share/zsh/site-functions
-
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  
-  # Install Oh My Zsh plugins
-  mkdir -p ~/.oh-my-zsh/custom/plugins
-  cd ~/.oh-my-zsh/custom/plugins
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git
-
 
   brew install --cask visual-studio-code
   brew install --cask raycast
@@ -109,18 +102,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install readline
   brew install gpg 
   brew install gawk
-  brew install --cask alacritty
   brew install firefox
   brew install 1password
   brew install notion
   brew install fzf
-  brew install zsh-syntax-highlighting
-  brew install zsh-autosuggestions
-  brew install zsh-completions
-  brew install zellij
+  brew install wezterm
+  brew install starship
   brew install go
-  sudo chown -R $(whoami) /usr/local/share/fish/vendor_completions.d
-
   brew install bat        # Enhanced `cat` command with syntax highlighting
   brew install exa        # Modern replacement for `ls`
   brew install fd         # Simple, fast, user-friendly alternative to `find`
@@ -134,6 +122,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install mas        # Mac App Store command-line interface
   brew install watch      # Executes a program periodically, showing output fullscreen
   brew install neovim     # Modern Vim-based text editor
+
+  # Add starship to the shell profile
+  echo 'eval "$(starship init zsh)"' >> $HOME/.zshrc
 
   xcode-select --install
 
