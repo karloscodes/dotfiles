@@ -122,6 +122,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install mas        # Mac App Store command-line interface
   brew install watch      # Executes a program periodically, showing output fullscreen
   brew install neovim     # Modern Vim-based text editor
+  brew install zsh-completions
 
   # Add starship to the shell profile
   echo 'eval "$(starship init zsh)"' >> $HOME/.zshrc
