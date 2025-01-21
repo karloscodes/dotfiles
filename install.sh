@@ -15,20 +15,7 @@ ln -s "$DIR/gitignore" ~/.gitignore
 unlink ~/.zshrc
 ln -s "$DIR/zshrc" ~/.zshrc
 
-# Create Alacritty config directory if it doesn't exist
-# mkdir -p ~/.config/alacritty
 
-# Unlink and link the Alacritty configuration file
-# unlink ~/.config/alacritty/alacritty.toml
-# ln -s "$DIR/alacritty.toml" ~/.config/alacritty/alacritty.toml
-
-
-# Unlink and link the Alacritty configuration file
-# unlink ~/.config/zellij/config.kdl
-# ln -s "$DIR/zellij.kdl" ~/.config/zellij/config.kdl
-
-unlink ~/.wezterm.lua
-ln -s "$DIR/.wezterm.lua" ~/.wezterm.lua
 
 
 # Uncomment the following lines if you want to manage tmux configuration as well
@@ -106,8 +93,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install 1password
   brew install notion
   brew install fzf
-  brew install wezterm
-  brew install starship
   brew install go
   brew install bat        # Enhanced `cat` command with syntax highlighting
   brew install exa        # Modern replacement for `ls`
@@ -122,10 +107,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install mas        # Mac App Store command-line interface
   brew install watch      # Executes a program periodically, showing output fullscreen
   brew install neovim     # Modern Vim-based text editor
-  brew install zsh-completions
-
-  # Add starship to the shell profile
-  echo 'eval "$(starship init zsh)"' >> $HOME/.zshrc
+  brew install --cask ghostty
 
   xcode-select --install
 
@@ -151,24 +133,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # Finder: use list view in all Finder windows by default
   defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-
-  # Disable press-and-hold for keys in favor of key repeat
-  defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-
-  # Set a fast key repeat rate
-  defaults write NSGlobalDomain KeyRepeat -int 2
-  defaults write NSGlobalDomain InitialKeyRepeat -int 12
-
-  # Show battery percentage
-  defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-
-  # Expand save panel by default
-  defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-  defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
-
-  # Expand print panel by default
-  defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-  defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
   # Save screenshots to the Downloads folder
   defaults write com.apple.screencapture location -string "${HOME}/Documents/Screenshots"
