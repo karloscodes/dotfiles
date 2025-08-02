@@ -40,10 +40,15 @@ create_symlink "$DIR/gitconfig" ~/.gitconfig
 create_symlink "$DIR/gitignore" ~/.gitignore
 create_symlink "$DIR/zshrc" ~/.zshrc
 create_symlink "$DIR/.mise.toml" ~/.mise.toml
+create_symlink "$DIR/starship.toml" ~/.config/starship.toml
 
 # Create Ghostty config directory and symlink
 mkdir -p ~/.config/ghostty
 create_symlink "$DIR/ghostty/config" ~/.config/ghostty/config
+
+# Create Neovim config directory and symlink
+mkdir -p ~/.config
+create_symlink "$DIR/nvim" ~/.config/nvim
 
 
 
@@ -178,6 +183,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   install_brew_package mas        # Mac App Store command-line interface
   install_brew_package watch      # Executes a program periodically, showing output fullscreen
   install_brew_package neovim     # Modern Vim-based text editor
+  install_brew_package starship   # Cross-shell prompt
+  install_brew_package zsh-autosuggestions    # Fish-like autosuggestions for zsh
+  install_brew_package zsh-syntax-highlighting # Fish-like syntax highlighting for zsh
+  install_brew_package zsh-completions # Additional completion definitions for zsh
   
   # Terminal emulator
   install_brew_cask ghostty
@@ -194,6 +203,14 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   if [ -f "$(brew --prefix)/opt/fzf/install" ]; then
     echo "Setting up fzf key bindings and completion..."
     "$(brew --prefix)/opt/fzf/install" --all --no-update-rc
+  fi
+
+  # Setup starship with Catppuccin Powerline preset
+  if command -v starship &> /dev/null; then
+    echo "Setting up Starship with Catppuccin Powerline preset..."
+    starship preset catppuccin-powerline -o ~/.config/starship.toml
+    # Copy the preset to dotfiles for version control
+    cp ~/.config/starship.toml "$DIR/starship.toml"
   fi
 
   # Setup mise with development tools
@@ -279,12 +296,6 @@ if command -v mise &> /dev/null; then
   echo "Updating mise and runtimes..."
   mise self-update
   mise upgrade
-fi
-
-# Update Oh My Zsh
-if [ -d "$HOME/.oh-my-zsh" ]; then
-  echo "Updating Oh My Zsh..."
-  cd "$HOME/.oh-my-zsh" && git pull
 fi
 
 echo "Update complete!"

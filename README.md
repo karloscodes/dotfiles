@@ -16,9 +16,13 @@ My dotfiles configuration for macOS development environment.
 - **JetBrains Mono Nerd Font**: Primary coding font
 - **Meslo & Hack Nerd Fonts**: Additional font options
 - **Visual Studio Code**: Primary code editor
+- **LazyVim**: Modern Neovim configuration with sensible defaults
 
 ### Shell Configuration
-- **Zsh** with Oh My Zsh
+- **Zsh** with Starship prompt
+- **zsh-autosuggestions**: Fish-like autosuggestions for zsh
+- **zsh-syntax-highlighting**: Fish-like syntax highlighting for zsh
+- **zsh-completions**: Additional completion definitions for zsh
 - Custom aliases for Homebrew maintenance
 - Integrated fzf and mise activation
 
@@ -63,6 +67,14 @@ Ghostty is configured with:
 - Font family: JetBrains Mono Nerd Font
 - Theme: Catppuccin Mocha (dark/light)
 
+### Neovim Configuration
+LazyVim is configured with:
+- Modern Neovim setup with sensible defaults
+- Built-in LSP support for multiple languages
+- File explorer, fuzzy finder, and git integration
+- Beautiful UI with proper syntax highlighting
+- Multiple themes: Catppuccin Mocha, Tokyo Night, Darcula, Gruvbox
+
 ## File Structure
 ```
 dotfiles/
@@ -72,6 +84,12 @@ dotfiles/
 ├── gitignore           # Global gitignore
 ├── zshrc               # Zsh configuration
 ├── .mise.toml          # Mise tool versions
-└── ghostty/
-    └── config          # Ghostty terminal config
+├── starship.toml       # Starship prompt configuration
+├── ghostty/
+│   └── config          # Ghostty terminal config
+└── nvim/               # LazyVim configuration
+    ├── init.lua        # Neovim entry point
+    └── lua/
+        ├── config/     # LazyVim configuration files
+        └── plugins/    # Custom plugin configurations
 ```
