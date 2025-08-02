@@ -114,6 +114,13 @@ export PATH=$PATH:$HOME/go/bin
 alias brewup="brew update && brew upgrade && brew cleanup && brew autoremove"
 alias brewclean="brew cleanup && brew autoremove && brew doctor"
 
+# Zellij aliases
+alias zj="zellij"
+alias zja="zellij attach"
+alias zjl="zellij list-sessions"
+alias zjk="zellij kill-session"
+alias zjka="zellij kill-all-sessions"
+
 # ==============================================================================
 # External Tool Initialization
 # ==============================================================================
@@ -129,4 +136,9 @@ fi
 if [ -f ~/.local/bin/mise ]; then
   eval "$(~/.local/bin/mise activate zsh)"
 fi
+
+# Auto-start Zellij if not already inside a session
+# if command -v zellij &> /dev/null && [ -z "$ZELLIJ" ]; then
+#     zellij attach --create
+# fi
 

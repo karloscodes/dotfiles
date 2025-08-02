@@ -50,6 +50,10 @@ create_symlink "$DIR/ghostty/config" ~/.config/ghostty/config
 mkdir -p ~/.config
 create_symlink "$DIR/nvim" ~/.config/nvim
 
+# Create Zellij config directory and symlink
+mkdir -p ~/.config/zellij
+create_symlink "$DIR/zellij/config.kdl" ~/.config/zellij/config.kdl
+
 
 
 
@@ -187,6 +191,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   install_brew_package zsh-autosuggestions    # Fish-like autosuggestions for zsh
   install_brew_package zsh-syntax-highlighting # Fish-like syntax highlighting for zsh
   install_brew_package zsh-completions # Additional completion definitions for zsh
+  install_brew_package zellij     # Terminal multiplexer
   
   # Terminal emulator
   install_brew_cask ghostty

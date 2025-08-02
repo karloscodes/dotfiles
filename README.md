@@ -10,6 +10,7 @@ My dotfiles configuration for macOS development environment.
 - **lazygit**: Terminal UI for git commands
 - **fzf**: Fuzzy finder for command line
 - **bat, exa, fd, tldr**: Enhanced CLI tools
+- **zellij**: Modern terminal multiplexer
 
 ### Terminal & Editor
 - **Ghostty**: Modern terminal emulator with Catppuccin theme
@@ -67,6 +68,13 @@ Ghostty is configured with:
 - Font family: JetBrains Mono Nerd Font
 - Theme: Catppuccin Mocha (dark/light)
 
+### Zellij Configuration
+Terminal multiplexer configured with:
+- Catppuccin Mocha theme
+- Intuitive Alt+key bindings for navigation
+- Mouse support and clipboard integration
+- Compact layout with rounded corners
+
 ### Neovim Configuration
 LazyVim is configured with:
 - Modern Neovim setup with sensible defaults
@@ -87,6 +95,8 @@ dotfiles/
 ├── starship.toml       # Starship prompt configuration
 ├── ghostty/
 │   └── config          # Ghostty terminal config
+├── zellij/
+│   └── config.kdl      # Zellij terminal multiplexer config
 └── nvim/               # LazyVim configuration
     ├── init.lua        # Neovim entry point
     └── lua/
