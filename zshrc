@@ -121,6 +121,10 @@ alias zjl="zellij list-sessions"
 alias zjk="zellij kill-session"
 alias zjka="zellij kill-all-sessions"
 
+# Editor aliases
+alias nv="nvim"
+alias v="nvim"
+
 # ==============================================================================
 # External Tool Initialization
 # ==============================================================================
