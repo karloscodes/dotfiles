@@ -103,8 +103,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Brew maintenance aliases
+alias brewup="brew update && brew upgrade && brew cleanup && brew autoremove"
+alias brewclean="brew cleanup && brew autoremove && brew doctor"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(~/.local/bin/mise activate zsh)"
+
+# Initialize mise
+if [ -f ~/.local/bin/mise ]; then
+  eval "$(~/.local/bin/mise activate zsh)"
+fi
 
 if [[ $(uname -m) == 'arm64' ]]; then
   export BREW_PREFIX="/opt/homebrew"
@@ -114,3 +122,5 @@ fi
 
 # Add go $HOME binaries to the path
 export PATH=$PATH:$HOME/go/bin
+# Added by Windsurf
+export PATH="/Users/karloscodes/.codeium/windsurf/bin:$PATH"

@@ -1,5 +1,5 @@
 [user]
-	name = Carlos Castellanos
+	name = "Carlos Castellanos"
 	email = me@karloscodes.com
 	
 [alias]
@@ -45,3 +45,8 @@
     ds = diff --staged
     # List aliases
     aliases = config --get-regexp alias
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -1,0 +1,11 @@
+# mise configuration file
+# This file specifies the default versions for development tools
+
+[tools]
+node = "lts"
+go = "latest"
+ruby = "latest"
+elixir = "latest"
+
+[settings]
+experimental = true
