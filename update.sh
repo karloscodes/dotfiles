@@ -13,6 +13,12 @@ fi
 # Update mise and managed runtimes
 if command -v mise &> /dev/null; then
   echo "Updating mise and runtimes..."
+  
+  # Trust the mise configuration file if it exists
+  if [ -f ~/.mise.toml ]; then
+    mise trust ~/.mise.toml 2>/dev/null || true
+  fi
+  
   mise self-update
   mise upgrade
 fi

@@ -200,6 +200,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Setting up mise with development environments..."
   eval "$(~/.local/bin/mise activate zsh)" 2>/dev/null || true
   
+  # Trust the mise configuration file
+  if command -v mise &> /dev/null && [ -f ~/.mise.toml ]; then
+    echo "Trusting mise configuration..."
+    mise trust ~/.mise.toml || true
+  fi
+  
   # Install development environments through mise
   if command -v mise &> /dev/null; then
     echo "Installing Node.js via mise..."
