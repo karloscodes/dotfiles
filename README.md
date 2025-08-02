@@ -14,8 +14,8 @@ My dotfiles configuration for macOS development environment.
 
 ### Terminal & Editor
 - **Ghostty**: Modern terminal emulator with Catppuccin theme
-- **JetBrains Mono Nerd Font**: Primary coding font
-- **Meslo & Hack Nerd Fonts**: Additional font options
+- **MesloLGS Nerd Font**: Primary terminal font
+- **JetBrains Mono, Meslo & Hack Nerd Fonts**: Additional font options
 - **Visual Studio Code**: Primary code editor
 - **LazyVim**: Modern Neovim configuration with sensible defaults
 
@@ -65,7 +65,7 @@ The install script can be run multiple times safely. It will:
 ### Terminal Configuration
 Ghostty is configured with:
 - Font size: 15
-- Font family: JetBrains Mono Nerd Font
+- Font family: MesloLGS Nerd Font
 - Theme: Catppuccin Mocha (dark/light)
 
 ### Zellij Configuration

@@ -158,6 +158,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Nerd Fonts - Updated installation method
   install_brew_cask font-jetbrains-mono-nerd-font
   install_brew_cask font-meslo-lg-nerd-font
+  install_brew_cask font-meslo-lgs-nerd-font
   install_brew_cask font-hack-nerd-font
   
   install_brew_package mysql@5.7
