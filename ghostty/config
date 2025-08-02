@@ -1,3 +1,6 @@
-font-size = 15
+font-size = 16
 font-family = "JetBrainsMono Nerd Font"
+font-style = "Medium"
+#adjust-cell-height = 25%
+adjust-cell-height = 8
 theme = dark:catppuccin-mocha,light:catppuccin-mocha

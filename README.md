@@ -64,8 +64,9 @@ The install script can be run multiple times safely. It will:
 
 ### Terminal Configuration
 Ghostty is configured with:
-- Font size: 15
-- Font family: MesloLGS Nerd Font
+- Font size: 16
+- Font family: JetBrains Mono Nerd Font (Medium weight)
+- Cell height adjustment: +4 pixels for better line spacing
 - Theme: Catppuccin Mocha (dark/light)
 
 ### Zellij Configuration
