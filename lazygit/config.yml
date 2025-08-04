@@ -1,0 +1,14 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --side-by-side --paging=never --line-numbers --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+  diffContextSize: 20
+
+gui:
+  sidePanelWidth: 0.3333
+  mainPanelSplitMode: 'flexible'
+  expandFocusedSidePanel: true
+  language: 'en'
+  timeFormat: '02 Jan 06 15:04 MST'
+os:
+  editCommand: 'nvim {path} +{line}'

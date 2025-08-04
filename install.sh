@@ -54,6 +54,10 @@ create_symlink "$DIR/nvim" ~/.config/nvim
 mkdir -p ~/.config/zellij
 create_symlink "$DIR/zellij/config.kdl" ~/.config/zellij/config.kdl
 
+# Create Lazygit config directory and symlink (macOS uses different location)
+mkdir -p ~/Library/Application\ Support/lazygit
+create_symlink "$DIR/lazygit/config.yml" ~/Library/Application\ Support/lazygit/config.yml
+
 
 
 
@@ -175,6 +179,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   install_brew_package lazygit
   install_brew_package fzf
   install_brew_package go
+  install_brew_package delta       # Better diff viewer with side-by-side support
   install_brew_package bat        # Enhanced `cat` command with syntax highlighting
   install_brew_package exa        # Modern replacement for `ls`
   install_brew_package fd         # Simple, fast, user-friendly alternative to `find`
