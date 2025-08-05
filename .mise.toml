@@ -4,7 +4,7 @@
 [tools]
 node = "lts"
 go = "latest"
-ruby = "latest"
+ruby = "3.4.4"
 elixir = "latest"
 
 [settings]
