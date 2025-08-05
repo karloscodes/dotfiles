@@ -167,6 +167,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   
   install_brew_package mysql@5.7
   install_brew_package openssl 
+  install_brew_package openssl@3
+  install_brew_package libyaml
+  install_brew_package gmp
+  install_brew_package rust
   install_brew_package readline
   install_brew_package gpg 
   install_brew_package gawk
