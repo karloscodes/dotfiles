@@ -1,43 +1,25 @@
 return {
   "folke/snacks.nvim",
+  -- this file is *added* to Lazy’s spec list, nothing else changes
   opts = {
+    -----------------------------------------------------------------
+    -- 1️⃣  Explorer panel  (<leader>e)
+    -----------------------------------------------------------------
+    explorer = {
+      hidden  = true,   -- list .* files immediately
+      ignored = true,   -- list .gitignored content too
+    },
+
+    -----------------------------------------------------------------
+    -- 2️⃣  All file-pickers  (<leader><space>, <leader>ff, etc.)
+    -----------------------------------------------------------------
     picker = {
-      -- Configure the file picker command to include hidden files
+      hidden  = true,   -- show dot-files
+      ignored = true,   -- show ignored files
+      -- you can be even more specific per-source:
       sources = {
-        files = {
-          cmd = { "fd", "--type", "f", "--hidden", "--exclude", ".git", "--color", "never" },
-        },
+        files = { hidden = true, ignored = true },
       },
-    },
-  },
-  keys = {
-    -- Override the default find files keybinding to include hidden files
-    {
-      "<leader><space>",
-      function()
-        require("snacks").picker.files({ 
-          cmd = { "fd", "--type", "f", "--hidden", "--exclude", ".git", "--color", "never" }
-        })
-      end,
-      desc = "Find Files (including hidden)",
-    },
-    {
-      "<leader>ff",
-      function()
-        require("snacks").picker.files({ 
-          cmd = { "fd", "--type", "f", "--hidden", "--exclude", ".git", "--color", "never" }
-        })
-      end,
-      desc = "Find Files (including hidden)",
-    },
-    {
-      "<leader>fh",
-      function()
-        require("snacks").picker.files({ 
-          cmd = { "fd", "--type", "f", "--hidden", "--exclude", ".git", "--color", "never" }
-        })
-      end,
-      desc = "Find Hidden Files",
-    },
+    },  
   },
 }
