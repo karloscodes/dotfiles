@@ -6,17 +6,17 @@ USER=$(whoami)
 # Set up the dotfiles directory
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do
-  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
   SOURCE="$(readlink "$SOURCE")"
   [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
 done
-DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
 
 # Function to create symlink safely
 create_symlink() {
   local target=$1
   local link=$2
-  
+
   if [ -L "$link" ]; then
     echo "Removing existing symlink: $link"
     unlink "$link"
@@ -30,7 +30,7 @@ create_symlink() {
       rm -rf "$link"
     fi
   fi
-  
+
   echo "Creating symlink: $link -> $target"
   ln -s "$target" "$link"
 }
@@ -58,9 +58,6 @@ create_symlink "$DIR/zellij/config.kdl" ~/.config/zellij/config.kdl
 mkdir -p ~/Library/Application\ Support/lazygit
 create_symlink "$DIR/lazygit/config.yml" ~/Library/Application\ Support/lazygit/config.yml
 
-
-
-
 # Uncomment the following lines if you want to manage tmux configuration as well
 # unlink ~/.tmux.conf
 # ln -s "$DIR/tmux.conf" ~/.tmux.conf
@@ -85,7 +82,7 @@ fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Install Homebrew if not installed
-  if ! command -v brew &> /dev/null; then
+  if ! command -v brew &>/dev/null; then
     echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   else
@@ -101,7 +98,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # Add Homebrew to the path and shell profile
   if ! grep -q "eval.*brew shellenv" ~/.zprofile 2>/dev/null; then
-    echo 'eval "$('"$BREW_PREFIX"'/bin/brew shellenv)"' >> ~/.zprofile
+    echo 'eval "$('"$BREW_PREFIX"'/bin/brew shellenv)"' >>~/.zprofile
   fi
   eval "$("$BREW_PREFIX"/bin/brew shellenv)"
 
@@ -114,7 +111,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   fi
 
   # Install mise if not installed
-  if ! command -v mise &> /dev/null; then
+  if ! command -v mise &>/dev/null; then
     echo "Installing mise..."
     curl https://mise.run | sh
   else
@@ -123,7 +120,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # Function to install brew package if not already installed
   install_brew_package() {
-    if ! brew list "$1" &> /dev/null; then
+    if ! brew list "$1" &>/dev/null; then
       echo "Installing $1..."
       brew install "$1"
     else
@@ -133,7 +130,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # Function to install cask if not already installed
   install_brew_cask() {
-    if ! brew list --cask "$1" &> /dev/null; then
+    if ! brew list --cask "$1" &>/dev/null; then
       echo "Installing cask $1..."
       brew install --cask "$1"
     else
@@ -158,56 +155,57 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   install_brew_package tree
   install_brew_package postgresql
   install_brew_package vips
-  
+
   # Nerd Fonts - Updated installation method
   install_brew_cask font-jetbrains-mono-nerd-font
   install_brew_cask font-meslo-lg-nerd-font
   install_brew_cask font-meslo-lgs-nerd-font
   install_brew_cask font-hack-nerd-font
-  
+
   install_brew_package mysql@5.7
-  install_brew_package openssl 
+  install_brew_package openssl
   install_brew_package openssl@3
   install_brew_package libyaml
   install_brew_package gmp
   install_brew_package rust
   install_brew_package readline
-  install_brew_package gpg 
+  install_brew_package gpg
   install_brew_package gawk
   install_brew_package firefox
   install_brew_package 1password
   install_brew_package notion
-  
+
   # Essential CLI tools requested
   install_brew_package ripgrep
   install_brew_package lazygit
   install_brew_package fzf
+  install_brew_package gh
   install_brew_package go
-  install_brew_package delta       # Better diff viewer with side-by-side support
-  install_brew_package bat        # Enhanced `cat` command with syntax highlighting
-  install_brew_package exa        # Modern replacement for `ls`
-  install_brew_package fd         # Simple, fast, user-friendly alternative to `find`
-  install_brew_package tldr       # Simplified and community-driven man pages
-  install_brew_package the_silver_searcher  # A code-searching tool similar to `ack`, but faster
-  install_brew_package httpie     # User-friendly HTTP client
-  install_brew_package jq         # Command-line JSON processor
-  install_brew_package ncdu       # Disk usage analyzer with an ncurses interface
-  install_brew_package glances    # System monitoring tool
-  install_brew_package btop       # Resource monitor that shows usage and stats
-  install_brew_package mas        # Mac App Store command-line interface
-  install_brew_package watch      # Executes a program periodically, showing output fullscreen
-  install_brew_package neovim     # Modern Vim-based text editor
-  install_brew_package starship   # Cross-shell prompt
-  install_brew_package zsh-autosuggestions    # Fish-like autosuggestions for zsh
+  install_brew_package delta                   # Better diff viewer with side-by-side support
+  install_brew_package bat                     # Enhanced `cat` command with syntax highlighting
+  install_brew_package exa                     # Modern replacement for `ls`
+  install_brew_package fd                      # Simple, fast, user-friendly alternative to `find`
+  install_brew_package tldr                    # Simplified and community-driven man pages
+  install_brew_package the_silver_searcher     # A code-searching tool similar to `ack`, but faster
+  install_brew_package httpie                  # User-friendly HTTP client
+  install_brew_package jq                      # Command-line JSON processor
+  install_brew_package ncdu                    # Disk usage analyzer with an ncurses interface
+  install_brew_package glances                 # System monitoring tool
+  install_brew_package btop                    # Resource monitor that shows usage and stats
+  install_brew_package mas                     # Mac App Store command-line interface
+  install_brew_package watch                   # Executes a program periodically, showing output fullscreen
+  install_brew_package neovim                  # Modern Vim-based text editor
+  install_brew_package starship                # Cross-shell prompt
+  install_brew_package zsh-autosuggestions     # Fish-like autosuggestions for zsh
   install_brew_package zsh-syntax-highlighting # Fish-like syntax highlighting for zsh
-  install_brew_package zsh-completions # Additional completion definitions for zsh
-  install_brew_package zellij     # Terminal multiplexer
-  
+  install_brew_package zsh-completions         # Additional completion definitions for zsh
+  install_brew_package zellij                  # Terminal multiplexer
+
   # Terminal emulator
   install_brew_cask ghostty
 
   # Install Xcode command line tools if not present
-  if ! xcode-select -p &> /dev/null; then
+  if ! xcode-select -p &>/dev/null; then
     echo "Installing Xcode command line tools..."
     xcode-select --install
   else
@@ -221,7 +219,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   fi
 
   # Setup starship with Catppuccin Powerline preset
-  if command -v starship &> /dev/null; then
+  if command -v starship &>/dev/null; then
     echo "Setting up Starship with Catppuccin Powerline preset..."
     starship preset catppuccin-powerline -o ~/.config/starship.toml
     # Copy the preset to dotfiles for version control
@@ -231,28 +229,28 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Setup mise with development tools
   echo "Setting up mise with development environments..."
   eval "$(~/.local/bin/mise activate zsh)" 2>/dev/null || true
-  
+
   # Trust the mise configuration file
-  if command -v mise &> /dev/null && [ -f ~/.mise.toml ]; then
+  if command -v mise &>/dev/null && [ -f ~/.mise.toml ]; then
     echo "Trusting mise configuration..."
     mise trust ~/.mise.toml || true
   fi
-  
+
   # Install development environments through mise
-  if command -v mise &> /dev/null; then
+  if command -v mise &>/dev/null; then
     echo "Installing Node.js via mise..."
     mise use --global node@lts || true
-    
+
     echo "Installing Go via mise..."
     mise use --global go@latest || true
-    
+
     echo "Installing Elixir via mise..."
     mise use --global elixir@latest || true
-    
+
     # Note: Rails is a Ruby gem, so we need Ruby first
     echo "Installing Ruby via mise..."
     mise use --global ruby@latest || true
-    
+
     # Install Rails after Ruby is available
     echo "Installing Rails gem..."
     ~/.local/share/mise/installs/ruby/*/bin/gem install rails || true
@@ -279,7 +277,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # Save screenshots to the Downloads folder
   defaults write com.apple.screencapture location -string "${HOME}/Documents/Screenshots"
-  
+
   # Restart Finder and Dock to apply changes
   killall Finder 2>/dev/null || true
   killall Dock 2>/dev/null || true
@@ -293,7 +291,7 @@ fi
 echo "All dotfiles have been installed :)"
 
 # Create update script for easy maintenance
-cat > "$DIR/update.sh" << 'EOF'
+cat >"$DIR/update.sh" <<'EOF'
 #!/bin/bash
 echo "Updating dotfiles and system packages..."
 
