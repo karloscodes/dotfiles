@@ -175,6 +175,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   install_brew_package 1password
   install_brew_package notion
 
+
   # Essential CLI tools requested
   install_brew_package ripgrep
   install_brew_package lazygit
@@ -203,6 +204,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # Terminal emulator
   install_brew_cask ghostty
+
+  brew install --cask jordanbaird-ice
+
 
   # Install Xcode command line tools if not present
   if ! xcode-select -p &>/dev/null; then
