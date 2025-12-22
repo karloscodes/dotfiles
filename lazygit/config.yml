@@ -1,8 +1,7 @@
 git:
   paging:
     colorArg: always
-    pager: delta --paging=never --line-numbers --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
-  diffContextSize: 20
+    pager: delta --paging=never --line-numbers
 
 gui:
   sidePanelWidth: 0.3333
