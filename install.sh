@@ -42,9 +42,9 @@ create_symlink "$DIR/zshrc" ~/.zshrc
 create_symlink "$DIR/.mise.toml" ~/.mise.toml
 create_symlink "$DIR/starship.toml" ~/.config/starship.toml
 
-# Create Ghostty config directory and symlink
-mkdir -p ~/.config/ghostty
-create_symlink "$DIR/ghostty/config" ~/.config/ghostty/config
+# Create Ghostty config directory and symlink (macOS uses Application Support)
+mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty
+create_symlink "$DIR/ghostty/config" ~/Library/Application\ Support/com.mitchellh.ghostty/config
 
 # Create Neovim config directory and symlink
 mkdir -p ~/.config
@@ -57,6 +57,8 @@ create_symlink "$DIR/zellij/config.kdl" ~/.config/zellij/config.kdl
 # Create Lazygit config directory and symlink (macOS uses different location)
 mkdir -p ~/Library/Application\ Support/lazygit
 create_symlink "$DIR/lazygit/config.yml" ~/Library/Application\ Support/lazygit/config.yml
+# Also create symlink in .config for XDG compatibility
+create_symlink "$DIR/lazygit" ~/.config/lazygit
 
 # Uncomment the following lines if you want to manage tmux configuration as well
 # unlink ~/.tmux.conf

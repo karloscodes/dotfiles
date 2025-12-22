@@ -146,3 +146,9 @@ fi
 #     zellij attach --create
 # fi
 
+
+# opencode
+export PATH=/Users/karloscodes/.opencode/bin:$PATH
+
+# Added by Antigravity
+export PATH="/Users/karloscodes/.antigravity/antigravity/bin:$PATH"
