@@ -60,6 +60,10 @@ create_symlink "$DIR/lazygit/config.yml" ~/Library/Application\ Support/lazygit/
 # Also create symlink in .config for XDG compatibility
 create_symlink "$DIR/lazygit" ~/.config/lazygit
 
+# Create Claude Code skills directory and symlink personal skills
+mkdir -p ~/.claude
+create_symlink "$DIR/claude/skills" ~/.claude/skills
+
 # Uncomment the following lines if you want to manage tmux configuration as well
 # unlink ~/.tmux.conf
 # ln -s "$DIR/tmux.conf" ~/.tmux.conf
