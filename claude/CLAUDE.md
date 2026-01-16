@@ -26,7 +26,6 @@ These rules apply to ALL projects. Project-specific CLAUDE.md files can extend b
 
 - **Readable > DRY** - Repeat yourself if it's clearer
 - **Small functions** - One thing, done well
-- **Explicit > implicit** - Magic causes bugs
 - **Delete dead code** - No commented-out blocks
 
 ## Testing
@@ -35,17 +34,40 @@ These rules apply to ALL projects. Project-specific CLAUDE.md files can extend b
 - **BDD style** - Describe behavior, not implementation
 - **Integration > unit** - Test the actual system
 - **Fast tests** - Slow tests don't get run
+- **Four phases** - Setup, Exercise, Verify, Teardown (blank lines between)
+- **Contexts for cases** - Use subtests to group related scenarios
+- **Table-driven only when needed** - Don't force it; simple tests are fine
 
 ```go
-// ✅ GOOD: BDD style, tests real behavior
+// ✅ GOOD: Four phases, clear structure
 func TestUserCanLogin(t *testing.T) {
+    // Setup
     db := setupTestDB(t)
     user := createUser(db, "test@example.com", "password123")
 
+    // Exercise
     result, err := Login(db, "test@example.com", "password123")
 
+    // Verify
     assert.NoError(t, err)
     assert.Equal(t, user.ID, result.UserID)
+
+    // Teardown (if needed, or use t.Cleanup)
+}
+
+// ✅ GOOD: Contexts for related cases
+func TestLogin(t *testing.T) {
+    t.Run("with valid credentials", func(t *testing.T) {
+        // ...
+    })
+
+    t.Run("with invalid password", func(t *testing.T) {
+        // ...
+    })
+
+    t.Run("with non-existent user", func(t *testing.T) {
+        // ...
+    })
 }
 
 // ❌ BAD: Mocks everything, tests nothing real
