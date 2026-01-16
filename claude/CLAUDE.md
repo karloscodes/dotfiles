@@ -21,6 +21,8 @@ These rules apply to ALL projects. Project-specific CLAUDE.md files can extend b
 - **Minimal dependencies** - Every dep is a liability
 - **Monolith first** - Extract only when pain is real
 - **SQLite/PostgreSQL** - No exotic databases
+- **Phoenix Contexts pattern** - For Go, TypeScript, etc. (domain-focused modules)
+- **Vanilla Rails** - For Rails: standard models, controllers, tests, fixtures. No service objects, no interactors, no fancy patterns
 
 ## Code Style
 
