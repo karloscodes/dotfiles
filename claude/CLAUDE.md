@@ -43,18 +43,13 @@ These rules apply to ALL projects. Project-specific CLAUDE.md files can extend b
 ```go
 // ✅ GOOD: Four phases, clear structure
 func TestUserCanLogin(t *testing.T) {
-    // setup
     db := setupTestDB(t)
     user := createUser(db, "test@example.com", "password123")
 
-    // exercise
     result, err := Login(db, "test@example.com", "password123")
 
-    // verify
     assert.NoError(t, err)
     assert.Equal(t, user.ID, result.UserID)
-
-    // teardown (if needed, or use t.Cleanup)
 }
 
 // ✅ GOOD: Contexts for related cases
