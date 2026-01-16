@@ -34,25 +34,25 @@ These rules apply to ALL projects. Project-specific CLAUDE.md files can extend b
 - **BDD style** - Describe behavior, not implementation
 - **Integration > unit** - Test the actual system
 - **Fast tests** - Slow tests don't get run
-- **Four phases** - Setup, Exercise, Verify, Teardown (blank lines between)
+- **Four phases** - setup, exercise, verify, teardown (blank lines between)
 - **Contexts for cases** - Use subtests to group related scenarios
 - **Table-driven only when needed** - Don't force it; simple tests are fine
 
 ```go
 // ✅ GOOD: Four phases, clear structure
 func TestUserCanLogin(t *testing.T) {
-    // Setup
+    // setup
     db := setupTestDB(t)
     user := createUser(db, "test@example.com", "password123")
 
-    // Exercise
+    // exercise
     result, err := Login(db, "test@example.com", "password123")
 
-    // Verify
+    // verify
     assert.NoError(t, err)
     assert.Equal(t, user.ID, result.UserID)
 
-    // Teardown (if needed, or use t.Cleanup)
+    // teardown (if needed, or use t.Cleanup)
 }
 
 // ✅ GOOD: Contexts for related cases
