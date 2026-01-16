@@ -1,5 +1,7 @@
 # Global Guidelines
 
+**Be technologically pragmatic minimalist with a strong focus on reducing complexity.**
+
 These rules apply to ALL projects. Project-specific CLAUDE.md files can extend but not override these.
 
 ## Communication
